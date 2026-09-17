@@ -140,6 +140,15 @@ npm run dev
 
 `/healthz` checks liveness; `/mcp` exposes the local MCP interface. Web access and general web writes are disabled by default. Development identity is for isolated local use; configure the deployment identity and transport boundary before exposing a service.
 
+## Latest portfolio milestone ? 2026-09-17
+
+The architecture showcase is published on GitHub Pages with share metadata and a
+reviewed social cover. [Publication and verification evidence](docs/examples/ONLINE_DEMO.md#september-17-online-publication-acceptance)
+records the passing CI/deployment, live HTTP checks and desktop/mobile navigation.
+See [engineering evolution](docs/HISTORY.md#september-17-portfolio-publication) and
+[publication cadence](docs/PUBLIC_DATA_POLICY.md#development-and-publication-cadence)
+for ongoing maintenance. Actual LinkedIn preview acceptance remains separate.
+
 ## Verification
 
 ```text

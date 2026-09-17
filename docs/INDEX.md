@@ -18,9 +18,9 @@ Start with the [product overview](../README.md), [architecture and Trust Kernel 
 - [Named per-job resume versions](architecture/RESUME_VARIANTS.md)
 - [Skill and project evidence library](architecture/SKILL_LIBRARY.md)
 - [Development Continuity and Benefits Standard v0.1](DEVELOPMENT_CONTINUITY_STANDARD.md)
-- [Architecture showcase and reference sandbox](examples/ONLINE_DEMO.md)
+- [Architecture showcase and reference sandbox](examples/ONLINE_DEMO.md): canonical Pages entry, synthetic Worker boundary and September 17 online publication acceptance.
 - [Synthetic lifecycle walkthrough](examples/SYNTHETIC_DEMO.md)
-- [Public data policy](PUBLIC_DATA_POLICY.md)
+- [Public data policy](PUBLIC_DATA_POLICY.md): reviewed assets and staged development-to-publication cadence.
 - [Platform Watch contract](strategy/OPENAI_PLATFORM_WATCH.md)
 - [Risk-based verification](VERIFICATION.md)
 - [Application Lifecycle Review — S2 Evaluation](../tests/evaluations/application-lifecycle-review-s2.md)
@@ -47,7 +47,7 @@ Start with the [product overview](../README.md), [architecture and Trust Kernel 
 - [State / Event Flow v0.1](architecture/STATE_EVENT_FLOW_v0.1.md)
 - [State Model v0.1](architecture/STATE_MODEL_v0.1.md)
 - [System Context v0.1](architecture/SYSTEM_CONTEXT_v0.1.md)
-- [Engineering evolution](HISTORY.md)
+- [Engineering evolution](HISTORY.md): September 17 portfolio milestone and its remaining acceptance boundaries.
 - [Public positioning and portfolio-hardening report](PUBLIC_REPOSITIONING_REPORT.md)
 - [Public repository sanitisation report](PUBLIC_SANITISATION_REPORT.md)
 

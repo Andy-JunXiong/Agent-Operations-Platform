@@ -1913,5 +1913,14 @@
     "scripts/build-showcase.test.mjs",
     "scripts/check-public.mjs",
     "scripts/check-public.test.mjs"
+  ],
+  "documentationCloseoutChanges": [
+    "README.md",
+    "docs/HISTORY.md",
+    "docs/INDEX.md",
+    "docs/PUBLIC_DATA_POLICY.md",
+    "docs/PUBLIC_FILE_MANIFEST.json",
+    "docs/PUBLIC_REPOSITIONING_REPORT.md",
+    "docs/examples/ONLINE_DEMO.md"
   ]
 }

@@ -127,3 +127,21 @@ it does not claim deployment or production-agent acceptance.
 The public repository link is the portfolio/resume entry. The original repository
 is retained as a private development record. Changes to visibility reduce further
 public access but cannot retract prior downloads, forks or cached copies.
+
+## September 17 showcase follow-through
+
+After the initial repository publication, the public edition added an isolated
+synthetic Jobs Worker, then made architecture exploration the primary entry.
+The README's cover and three reading paths now align with the portfolio format.
+GitHub Pages, sharing metadata and Worker HEAD support were subsequently verified
+and published at `37dc01ede2a78042ce12f50b10a75593eaa692b7`; the
+[Verify/Pages run](https://github.com/Andy-JunXiong/Agent-Operations-Platform/actions/runs/35186516213)
+passed. Live browser and crawler-compatible HTTP evidence is recorded in the
+[showcase guide](examples/ONLINE_DEMO.md#september-17-online-publication-acceptance).
+
+This advances public presentation and synthetic interaction acceptance, not
+full-platform production acceptance. Actual LinkedIn preview acceptance remains
+external. The [September 17 milestone](HISTORY.md#september-17-portfolio-publication)
+and [maintenance policy](PUBLIC_DATA_POLICY.md#development-and-publication-cadence)
+record selected future promotion from private development with no automatic
+history/data mirror. Today's real operational acceptance records stay private.

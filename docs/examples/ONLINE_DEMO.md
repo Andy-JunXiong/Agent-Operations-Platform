@@ -74,6 +74,28 @@ navigation at 1440, 1024, 768, 390 and 320 pixels with no script errors, horizon
 overflow or homepage API calls. This verifies site behavior, not a logged-in
 LinkedIn preview. Online publication is gated by the Verify workflow.
 
+## September 17 online publication acceptance
+
+Public source `37dc01ede2a78042ce12f50b10a75593eaa692b7` passed
+[Verify and GitHub Pages deployment](https://github.com/Andy-JunXiong/Agent-Operations-Platform/actions/runs/35186516213).
+The same showcase/HEAD fix was deployed to the existing Worker without a storage
+migration. Its original URL remains available; GitHub Pages is the canonical
+portfolio sharing entry.
+
+On the live Pages URL, GET/HEAD with a LinkedInBot user-agent returned 200 HTML
+without a session cookie. CSS, JavaScript and the PNG all returned 200 with the
+expected content types; PNG dimensions were 1200 x 630 and its digest matched the
+reviewed artifact. Live browser checks at five widths passed all seven component
+selections, five flow steps, play/pause, internal reading links, the project-base
+home link and the absolute Worker reference link, with no script errors or
+horizontal overflow. Worker GET/HEAD and sharing metadata also passed online.
+
+These are direct website checks, not observed LinkedIn infrastructure requests.
+The user's logged-in LinkedIn preview/cache acceptance is still pending. A separate
+GitHub-branded image was delivered locally for a media card; it has not been set as
+the repository social preview and does not replace this site's committed PNG.
+Future publication follows the [milestone cadence](../PUBLIC_DATA_POLICY.md#development-and-publication-cadence).
+
 ## Two levels of exploration
 
 - `/`: an architecture overview with seven selectable responsibilities, source
