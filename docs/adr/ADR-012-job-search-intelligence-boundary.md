@@ -1,5 +1,7 @@
 # ADR-012 — Evidence-first Job Search Intelligence boundary
 
+> Historical decision/design context. Personal AI Workspace, PAW and Workspace product references use the former name. See [current product terminology and capability boundaries](../architecture/AGENT_OPERATIONS_PLATFORM.md). Original proposals and acceptance limits remain scoped as written.
+
 **Status:** Proposed for post-M4 implementation
 
 **Date:** 2026-09-04

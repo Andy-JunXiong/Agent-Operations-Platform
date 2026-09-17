@@ -4,7 +4,7 @@
   "files": [
     {
       "path": ".agents/skills/application-lifecycle-review/SKILL.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": ".agents/skills/application-lifecycle-review/references/mutation-procedure.md",
@@ -12,7 +12,7 @@
     },
     {
       "path": ".agents/skills/job-search-today-review/SKILL.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": ".agents/skills/openai-platform-watch/SKILL.md",
@@ -24,11 +24,11 @@
     },
     {
       "path": ".agents/skills/release.json",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": ".agents/skills/targeted-verification/SKILL.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": ".dockerignore",
@@ -36,7 +36,7 @@
     },
     {
       "path": ".env.example",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": ".gitattributes",
@@ -320,7 +320,7 @@
     },
     {
       "path": "docs/DEVELOPMENT_CONTINUITY_STANDARD.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/HISTORY.md",
@@ -339,6 +339,10 @@
       "treatment": "ADDED"
     },
     {
+      "path": "docs/PUBLIC_REPOSITIONING_REPORT.md",
+      "treatment": "ADDED"
+    },
+    {
       "path": "docs/PUBLIC_SANITISATION_REPORT.md",
       "treatment": "ADDED"
     },
@@ -352,51 +356,55 @@
     },
     {
       "path": "docs/adr/ADR-001-conversation-not-system-of-record.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/adr/ADR-002-workspace-owns-state.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/adr/ADR-003-chatgpt-native-first.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/adr/ADR-004-mcp-integration-boundary.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/adr/ADR-005-state-mutations-require-evidence.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/adr/ADR-006-spike-runtime-and-persistence.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/adr/ADR-007-identity-auth-boundary.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/adr/ADR-008-transition-admission-idempotency.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/adr/ADR-009-cross-app-evidence-handoff.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/adr/ADR-010-real-application-inventory.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/adr/ADR-011-task-attention-today-view.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/adr/ADR-012-job-search-intelligence-boundary.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/AGENT_OPERATIONS_PLATFORM.md",
+      "treatment": "ADDED"
     },
     {
       "path": "docs/architecture/APPLICATION_DOSSIER_WORKFLOW.md",
@@ -412,7 +420,7 @@
     },
     {
       "path": "docs/architecture/ARCHITECTURE_REVIEW_v0.1.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/architecture/CANDIDATE_MATCH_GRADES.md",
@@ -436,7 +444,7 @@
     },
     {
       "path": "docs/architecture/JOB_SEARCH_INTELLIGENCE_ARCHITECTURE_v1.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/architecture/JOB_TRACKER_FLOW_REVIEW_2026-09-08.md",
@@ -476,15 +484,15 @@
     },
     {
       "path": "docs/architecture/STATE_EVENT_FLOW_v0.1.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/architecture/STATE_MODEL_v0.1.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/architecture/SYSTEM_CONTEXT_v0.1.md",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "docs/architecture/WORKSPACE_SKILLS_LAYER_PROPOSAL.md",
@@ -1180,7 +1188,7 @@
     },
     {
       "path": "src/domain/gmail-check.ts",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "src/domain/job-application-lifecycle.ts",
@@ -1248,7 +1256,7 @@
     },
     {
       "path": "src/mcp/create-server.ts",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "src/mcp/http-app.ts",
@@ -1300,7 +1308,7 @@
     },
     {
       "path": "src/web/candidate-chatgpt-handoff.ts",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "src/web/candidate-screening-view.ts",
@@ -1324,15 +1332,15 @@
     },
     {
       "path": "src/web/skill-library-prompts.ts",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "src/web/skill-library-view.ts",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "src/web/views.ts",
-      "treatment": "UNCHANGED"
+      "treatment": "MODIFIED"
     },
     {
       "path": "tests/evaluations/application-lifecycle-review-s2.md",
@@ -1706,5 +1714,7 @@
       "path": "vitest.config.ts",
       "treatment": "UNCHANGED"
     }
-  ]
+  ],
+  "productName": "Agent Operations Platform",
+  "positioningBaseline": "343b13ef88977ac848e40a44f727a85141e69524"
 }

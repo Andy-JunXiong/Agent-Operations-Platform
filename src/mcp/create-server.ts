@@ -64,9 +64,9 @@ export function createWorkspaceMcpServer(
   server.registerTool(
     "workspace_ping",
     {
-      title: "Check Workspace availability",
+      title: "Check Agent Operations Platform availability",
       description:
-        "Check that the Personal AI Workspace MCP server and its persistent database are available.",
+        "Check that the Agent Operations Platform MCP server and its persistent database are available.",
       inputSchema: {},
       outputSchema: resultOutputSchema,
       annotations: {

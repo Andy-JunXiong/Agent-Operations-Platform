@@ -2,6 +2,8 @@
 
 Status: advisory procedure. It cannot grant mutation authority or change production configuration.
 
+<a id="ownership-check"></a>
+
 ## Evidence and ownership
 
 Pin a reviewed repository snapshot and source window before comparing capabilities. Distinguish publication, retrieval, preview, general availability and account-specific access. Preserve source references and mark unavailable evidence incomplete. A repeated source is not a new release.

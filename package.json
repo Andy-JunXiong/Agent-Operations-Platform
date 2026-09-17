@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Persistent work-state MCP server for ChatGPT",
+  "description": "Agent Operations Platform: durable state, explicit authority and controlled state transitions for AI-assisted workflows",
   "engines": {
     "node": ">=24.0.0"
   },

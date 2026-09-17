@@ -1,5 +1,9 @@
 # Engineering evolution
 
+The current public product name is **Agent Operations Platform**. Personal AI Workspace
+and PAW identify earlier project stages and retained compatibility identifiers. See
+[the current architecture](architecture/AGENT_OPERATIONS_PLATFORM.md).
+
 This public overview preserves engineering milestones without a personal operational diary.
 
 | Increment | Engineering evidence retained |

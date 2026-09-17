@@ -1,5 +1,7 @@
 # Logical Architecture v0.1
 
+> Historical decision/design context. Personal AI Workspace, PAW and Workspace product references use the former name. See [current product terminology and capability boundaries](AGENT_OPERATIONS_PLATFORM.md). Original proposals and acceptance limits remain scoped as written.
+
 > Historical frozen-MVP architecture snapshot. Current product/deployment boundaries are in [Core job workflow](CORE_JOB_WORKFLOW.md) and the release handoff (historical operational reference omitted); the former M4 freeze is retired (historical operational reference omitted).
 
 > This document describes the verified and frozen MVP. The proposed post-M4

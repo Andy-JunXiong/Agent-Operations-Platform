@@ -1,5 +1,7 @@
 # Sandbox Agent Authority Design
 
+> Historical decision/design context. Personal AI Workspace, PAW and Workspace product references use the former name. See [current product terminology and capability boundaries](AGENT_OPERATIONS_PLATFORM.md). Original proposals and acceptance limits remain scoped as written.
+
 Status: proposed design, not an implemented or production-approved authority model.
 Design version: `paw-sandbox-authority-v1`, 2026-09-16.
 Audited baseline: `039a15c32f2beab6717881838fbed81099f76639`.

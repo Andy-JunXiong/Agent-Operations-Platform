@@ -1,5 +1,7 @@
 # Job Search Intelligence Architecture v1
 
+> Historical decision/design context. Personal AI Workspace, PAW and Workspace product references use the former name. See [current product terminology and capability boundaries](AGENT_OPERATIONS_PLATFORM.md). Original proposals and acceptance limits remain scoped as written.
+
 **Status:** PROPOSED POST-M4 BASELINE
 
 **Runtime impact:** NONE during the active M4 feature freeze

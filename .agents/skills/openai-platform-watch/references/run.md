@@ -36,26 +36,26 @@ literal headings or jargon repeated in the opening.
 OpenAI Platform Watch — <date; scan result; material coverage limitation if any>
 
 Directional judgment: <NO DRIFT / NARROW / EXPAND / REPOSITION, advisory>
-<What changed in the PAW/OpenAI comparison and the investment consequence;
+<What changed in the Agent Operations Platform/OpenAI comparison and the investment consequence;
 if unchanged, say so without manufacturing novelty.>
 
 <Up to three insights, ordered by decision importance>
 Judgment: <specific architectural recommendation, not a release headline>
-Comparison: <evidenced platform change/trajectory> versus <PAW actual/planned
+Comparison: <evidenced platform change/trajectory> versus <Agent Operations Platform actual/planned
 capability> versus <prior Watch finding and what changed or still holds>
 Consequence: <affected owner, dependency, user workflow or investment>
 Choice: <recommended next step and priority; what to postpone/avoid/retain;
 real alternative and its material tradeoff>
 Uncertainty and reversal: <strongest counterevidence or unknown; bounded test
 and result that would change this recommendation>
-Evidence: <official fact link + pinned PAW evidence; label the inference>
+Evidence: <official fact link + pinned Agent Operations Platform evidence; label the inference>
 
 Decision requested: <specific choice for the maintainer, or no decision needed;
 advice does not change the roadmap or accept an experiment>
 
 Evidence appendix:
 Run: <manual / actual scheduled / editorial reanalysis of a named prior run>
-Skill ref; PAW SHA; previous successful scan; source window/cutoff; source coverage
+Skill ref; Agent Operations Platform SHA; previous successful scan; source window/cutoff; source coverage
 Production: <dated release evidence or UNKNOWN; repository/local/live differences>
 For each insight retain the existing finding reference/comparison label and
 the contract's five fields:
@@ -75,17 +75,17 @@ fresh retrieval, a new completed scan or an advanced cutoff.
 
 ## Quality checks
 
-- A finding names a real PAW function and its current behavior, cites that
+- A finding names a real Agent Operations Platform function and its current behavior, cites that
   baseline, compares a concrete alternative and gives both short- and long-term
   consequences for change AND no change. It fails if the same recommendation
-  could be pasted into any project by replacing the name PAW.
+  could be pasted into any project by replacing the name Agent Operations Platform.
 - Narrative describes a supported workflow or clearly marked scenario, never
   invented events or quoted user experiences. Explain terms in ordinary language.
 - An already delivered feature is context, not a new adoption request. A finding
   asks about a remaining choice; ACCEPT/REJECT applies to its stated advice.
 
 - An unchanged previously reported feature produces no new material claim.
-- A PAW change satisfying an old revisit condition reopens that finding even
+- A Agent Operations Platform change satisfying an old revisit condition reopens that finding even
   without an OpenAI release. A changed platform claim links its predecessor.
 - A failed source read is visible and cannot become NO MATERIAL CHANGE.
 - ADOPT + NOT_TESTED + DEFERRED remains distinct from IGNORE.
@@ -94,13 +94,13 @@ fresh retrieval, a new completed scan or an advanced cutoff.
 - A report can recommend a different product boundary; no preferred conclusion
   is baked into the procedure. Scheduled acceptance uses these same claims.
 
-- A release summary without a pinned PAW comparison fails the insight quality gate.
+- A release summary without a pinned Agent Operations Platform comparison fails the insight quality gate.
 - A recommendation names an alternative, priority and a falsifiable revisit/test.
 - Routine API error handling stays in the appendix unless evidenced impact makes
   it architectural; no invented outage or forced strategy claim.
 - Unchanged evidence does not create three filler insights. Missing evidence can
   limit a judgment but cannot establish no change across unread sources.
-- Recommendations may challenge PAW's current thesis. The test must be capable
+- Recommendations may challenge Agent Operations Platform's current thesis. The test must be capable
   of changing the conclusion, rather than validating it by construction.
 - A revised report format reuses retrieval acceptance only for unchanged mechanics;
   its scheduled reasoning quality remains NOT_TESTED until a real run is reviewed.
@@ -109,11 +109,11 @@ fresh retrieval, a new completed scan or an advanced cutoff.
 
 The user's September 10 feedback asks for a story he can follow and a concrete basis
 for decisions. Write in plain Chinese, as a colleague explaining what matters
-after watching him use PAW. Do not pretend to have observed an event not in the
+after watching him use Agent Operations Platform. Do not pretend to have observed an event not in the
 records. Start with a freshly checked official release and its publication date,
-explain the affected PAW task and current feature, then compare the investment
+explain the affected Agent Operations Platform task and current feature, then compare the investment
 choices. Keep the official link beside the claim so the reader can follow the
-reasoning from release to recommendation. PAW-only work is a separately labeled
+reasoning from release to recommendation. Agent Operations Platform-only work is a separately labeled
 revisit condition, not a substitute for checking latest OpenAI publications.
 A narrative is connected reasoning, not fiction or a
 series of "Judgment / Consequence / Boundary" labels.
@@ -126,7 +126,7 @@ taxonomy and scan mechanics in the source appendix. Distinguish the newest
 publication actually found from the time of retrieval, and state when no newer
 release was found. Do not relabel earlier capabilities as newly released.
 
-For each remaining decision, use a title that names the PAW feature and choice:
+For each remaining decision, use a title that names the Agent Operations Platform feature and choice:
 "简历编辑：保留网页，还是整体搬进聊天？" is concrete; "坚持领域价值" is not.
 Explain the existing behavior and actual alternative in prose, followed by a
 compact comparison:
@@ -143,7 +143,7 @@ task success. An inability to measure an effect is a visible limitation, not a
 reason to fill the cell with generic praise. A bounded experiment can be the
 recommended option, but needs a concrete task, observation and stopping condition.
 
-For PAW import, use the existing `body` for narrative, `recommendation` for the
+For Agent Operations Platform import, use the existing `body` for narrative, `recommendation` for the
 feature explanation and comparison table, and `nextStep` for the bounded proposed
 action. No schema extension is needed. Keep evidence links and stable finding keys.
 Changing the advice creates a new immutable report snapshot with a reference to
@@ -154,6 +154,6 @@ Use the September 10 source-based revision (historical operational reference omi
 as the example. The earlier story-v2 improved presentation but did not adequately
 connect official releases to its advice; it is retained as historical evidence.
 Its concrete facts and recommendations are historical examples, not defaults for
-future reports. Resolve current PAW evidence on every new scan. A saved scheduled
+future reports. Resolve current Agent Operations Platform evidence on every new scan. A saved scheduled
 task pinned to an older procedure does not automatically inherit this revision;
 record that gap until its exact saved prompt is separately updated and read back.

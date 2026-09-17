@@ -1,5 +1,7 @@
 # Personal AI Workspace Skills Layer Proposal
 
+> Historical decision/design context. Personal AI Workspace, PAW and Workspace product references use the former name. See [current product terminology and capability boundaries](AGENT_OPERATIONS_PLATFORM.md). Original proposals and acceptance limits remain scoped as written.
+
 **Status:** S0 architecture and distribution verification only  
 **Repository baseline:** `main` at `f42a0db8fb82e7c65d3343f96922da98996e373b`  
 **Prepared:** 2026-09-08  

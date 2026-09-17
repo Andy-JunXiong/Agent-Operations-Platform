@@ -1,6 +1,6 @@
 ---
 name: openai-platform-watch
-description: Execute a manual or scheduled OpenAI Platform Watch for Personal AI Workspace, comparing official changes and PAW evidence with the existing Watch contract and prior findings. Produces advisory reports; excludes general news summaries, implementation and Job Search operations.
+description: Execute a manual or scheduled OpenAI Platform Watch for Agent Operations Platform, comparing official changes and Agent Operations Platform evidence with the existing Watch contract and prior findings. Produces advisory reports; excludes general news summaries, implementation and Job Search operations.
 ---
 
 # OpenAI Platform Watch procedure
@@ -12,12 +12,15 @@ It is repo-local governance and is outside `paw-job-search-skills-s0-s2-v1`.
 
 ## Establish the evidence boundary
 
-1. Resolve `main` of `Andy-JunXiong/Personal-AI-Workspace` once through the GitHub
+1. Resolve `main` of the explicitly selected showcase repository once through the GitHub
    connector/API to a full commit SHA. Read every baseline file at that SHA:
    this Skill and its [run reference](references/run.md), the Watch contract,
    `docs/architecture/CORE_JOB_WORKFLOW.md`, `README.md`, and relevant linked
    architecture/release evidence. A moving branch or search snippet is not a
    pinned file read. Record the actual returned ref and paths.
+   If no showcase repository is configured, use a supplied reviewed local snapshot
+   and label it local, or report INCOMPLETE. Do not fall back to the original
+   operational repository or infer a new repository URL from the product name.
 2. Record scan start/cutoff/timezone, Skill ref, repository SHA, previous successful
    scan/cutoff, source scope and last confirmed production release with evidence
    date. Repository state and recorded/live production evidence are distinct.
@@ -32,7 +35,7 @@ It is repo-local governance and is outside `paw-job-search-skills-s0-s2-v1`.
 ## Compare changes
 
 - First run: establish the bounded baseline. Later runs: inspect official changes
-  since the last successful cutoff, PAW changes, and recorded revisit conditions.
+  since the last successful cutoff, Agent Operations Platform changes, and recorded revisit conditions.
   Failed/incomplete scans do not advance that cutoff. Recheck overlapping dates
   and deduplicate by capability/source event and prior finding reference.
 - Open official source bodies, including relevant release notes and linked
@@ -45,24 +48,24 @@ It is repo-local governance and is outside `paw-job-search-skills-s0-s2-v1`.
 - Apply the contract's four ownership questions to material candidates. Examine
   distribution, user entry points and product opportunity as well as implementation
   overlap. Permit NO DRIFT, NARROW, EXPAND or REPOSITION according to evidence;
-  do not assume PAW's state-layer thesis is permanently correct.
+  do not assume Agent Operations Platform's state-layer thesis is permanently correct.
 - Recommend a bounded target-environment experiment where needed. A platform
   announcement, interactive connector read, tool discovery, trigger acknowledgement,
   or local test cannot establish unattended acceptance or authorize removal.
 
 ## Synthesize directional and architectural insight
 
-The report's purpose is to improve PAW decisions, not to retell release notes.
+The report's purpose is to improve Agent Operations Platform decisions, not to retell release notes.
 Before writing, compare three things explicitly: the evidenced OpenAI trajectory,
-PAW's implemented or approved/planned capability, and the previous Watch judgment.
+Agent Operations Platform's implemented or approved/planned capability, and the previous Watch judgment.
 A trajectory is an inference supported by dated evidence, not a claim that one
-release proves a trend. Read relevant code or decision records for the PAW side;
+release proves a trend. Read relevant code or decision records for the Agent Operations Platform side;
 do not invent roadmap commitments or infer production from repository files.
 
 For each material insight:
 - Name the changed assumption and the exact responsibility, user workflow or
   investment affected. Explain why it matters now, compared with the prior view.
-- Compare retaining/building PAW capability with adopting a platform primitive.
+- Compare retaining/building Agent Operations Platform capability with adopting a platform primitive.
   Include dependency, migration, usability and recovery tradeoffs where material.
 - Recommend a concrete priority: what to do next, postpone, avoid building, or
   retain for a stated reason. Distinguish an accepted implementation from a proposed
@@ -80,19 +83,19 @@ Do not force an insight when evidence shows no material change; say which prior
 judgment still holds and its revisit condition. With incomplete evidence, limit
 the conclusion and expose the gap at the top, rather than inventing strategic certainty.
 Do not repeatedly recommend "keep domain state" as a default. Consider narrowing,
-expanding or repositioning PAW if evidence supports it, including replacement of
+expanding or repositioning Agent Operations Platform if evidence supports it, including replacement of
 an existing responsibility subject to the contract's REMOVE gate.
 
 ## Report and stop
 
-The user's reading preference is a plain-Chinese narrative tied to actual PAW use.
+The user's reading preference is a plain-Chinese narrative tied to actual Agent Operations Platform use.
 His subsequent clarification requires the narrative to start from freshly read
-official OpenAI releases and explain their consequences for PAW development.
-Name the release date and link beside the affected claim; PAW task lists alone
+official OpenAI releases and explain their consequences for Agent Operations Platform development.
+Name the release date and link beside the affected claim; Agent Operations Platform task lists alone
 do not satisfy this report, and fresh retrieval does not imply a new release.
 Follow the [feature-choice writing contract](references/run.md#feature-choice-writing-contract):
 connect the release to a concrete workflow, explain why it matters, then
-compare a named PAW function/architecture with a specific alternative. Every
+compare a named Agent Operations Platform function/architecture with a specific alternative. Every
 decision must explain the short- and long-term effects of both changing and
 retaining it. No invented time savings, generic "improve efficiency", staged
 dialogue or technical status dump in the opening. Put source/version/status
@@ -105,7 +108,7 @@ do not hide additional urgent impacts to meet a presentation limit. Complete mea
 the declared source scope was checked, not comprehensive knowledge of OpenAI.
 Use the contract's exact scan results and finding fields. New recommendations
 start with Human decision `PENDING`; quote accepted decisions with their provenance
-without extending their scope. Link facts and distinguish PAW inference.
+without extending their scope. Link facts and distinguish Agent Operations Platform inference.
 
 Return the draft report in the requesting conversation/run output. Include missing
 sources, unresolved access/verification, next conditions and whether the previous

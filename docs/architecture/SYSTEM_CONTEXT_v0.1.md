@@ -1,5 +1,7 @@
 # System Context v0.1
 
+> Historical decision/design context. Personal AI Workspace, PAW and Workspace product references use the former name. See [current product terminology and capability boundaries](AGENT_OPERATIONS_PLATFORM.md). Original proposals and acceptance limits remain scoped as written.
+
 This document includes conceptual ownership as well as the verified Job Search
 runtime. Future interfaces and intelligence records below are proposals, not
 deployed capabilities.

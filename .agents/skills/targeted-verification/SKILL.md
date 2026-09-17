@@ -1,6 +1,6 @@
 ---
 name: targeted-verification
-description: Select the minimum sufficient verification for a Personal AI Workspace repository change, or reassess checks after a failure or follow-up edit. Use when choosing tests or validating development changes; not for live job-search reviews, mail scans or production business operations.
+description: Select the minimum sufficient verification for an Agent Operations Platform repository change, or reassess checks after a failure or follow-up edit. Use when choosing tests or validating development changes; not for live job-search reviews, mail scans or production business operations.
 ---
 
 # Targeted verification

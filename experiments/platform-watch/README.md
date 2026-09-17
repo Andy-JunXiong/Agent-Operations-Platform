@@ -4,7 +4,7 @@ Status: input preparation implemented; Agent experiment NOT_RUN. This is an
 operator utility, not a sandbox, Agent runner, source verifier or security gate.
 It has no dependencies beyond Node 24. It reads six reviewed public snapshot
 files with pinned SHA-256 digests; it never executes repository
-scripts, accesses the network, calls PAW or runs a model.
+scripts, accesses the network, calls the live platform or runs a model.
 
 CI invokes this kit's Node tests explicitly. Original Git history is not needed.
 A green helper check is still not a completed Agent experiment.
@@ -21,7 +21,7 @@ value is repeatable, integrity-checked inputs and separate reviewer material.
 Long-term value depends on measured results informing whether sandbox execution
 is worth adopting; no speed, quality or safety benefit has yet been demonstrated.
 The plan's platform ownership check still applies: runtime isolation belongs to
-the hosting platform; this package only prepares PAW-specific evaluation inputs.
+the hosting platform; this package only prepares platform-specific evaluation inputs.
 
 ## Prepare and check
 
@@ -43,7 +43,7 @@ Inputs are reviewed public snapshots under `fixtures/synthetic/watch-baseline/`.
 2. Mount only `control/`, `evidence/` and the selected `cases/<id>/` read-only.
    Never mount this checkout, the entire bundle or `operator/`. Each run gets a
    fresh workload and empty writable temporary/results directory. No credentials,
-   private connectors, PAW endpoints, SQLite, host sockets or live network access.
+   private connectors, live platform endpoints, SQLite, host sockets or live network access.
 3. Explicitly install `control/OVERLAY.txt` as the higher-priority experiment
    constraint and the pinned Skill plus run reference as the procedure. Its
    relative Watch-document reference maps to the pinned evidence copy; historical

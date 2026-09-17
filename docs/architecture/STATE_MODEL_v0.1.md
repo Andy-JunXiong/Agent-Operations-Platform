@@ -1,5 +1,7 @@
 # State Model v0.1
 
+> Historical decision/design context. Personal AI Workspace, PAW and Workspace product references use the former name. See [current product terminology and capability boundaries](AGENT_OPERATIONS_PLATFORM.md). Original proposals and acceptance limits remain scoped as written.
+
 **Status:** SPIKE 1A/1B AND REAL JOB SEARCH MVP M1/M2/M3 VERIFIED AND FROZEN
 
 > This remains the canonical frozen MVP state model. Proposed post-M4 posting,

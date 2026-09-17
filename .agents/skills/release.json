@@ -1,6 +1,6 @@
 {
   "schemaVersion": "paw-workspace-skills-release-v1",
-  "releaseVersion": "0.1.0",
+  "releaseVersion": "0.1.1",
   "workspaceCompatibility": {
     "capabilitySet": "paw-job-search-skills-s0-s2-v1",
     "toolsBySkill": {
@@ -22,13 +22,13 @@
   "skills": [
     {
       "name": "job-search-today-review",
-      "skillVersion": "0.1.0",
+      "skillVersion": "0.1.1",
       "sourceDirectory": ".agents/skills/job-search-today-review",
       "policyVersion": null
     },
     {
       "name": "application-lifecycle-review",
-      "skillVersion": "0.1.0",
+      "skillVersion": "0.1.1",
       "sourceDirectory": ".agents/skills/application-lifecycle-review",
       "policyVersion": null
     }

@@ -10,7 +10,7 @@ export function skillLibraryPanel(service: WorkspaceService) {
     const source = sourcesById.get(id);
     return `<blockquote>${e(quote)}</blockquote><a href="#source-${e(id)}">${e(source?.title ?? "来源已不可用")} ↓</a>`;
   };
-  const handoff = (id: string, title: string, prompt: string, button: string) => `<details><summary>${e(title)}</summary><section class="candidate-chatgpt-handoff" data-chatgpt-handoff><label for="${id}">复制后在 ChatGPT 中通过 @ 选择 Personal AI Workspace</label><textarea id="${id}" data-chatgpt-prompt readonly rows="8">${e(prompt)}</textarea><button type="button" class="button secondary" data-copy-candidate-prompt>${e(button)}</button><p data-chatgpt-copy-status role="status" aria-live="polite"></p></section></details>`;
+  const handoff = (id: string, title: string, prompt: string, button: string) => `<details><summary>${e(title)}</summary><section class="candidate-chatgpt-handoff" data-chatgpt-handoff><label for="${id}">复制后在 ChatGPT 中通过 @ 选择 Agent Operations Platform（连接名称可能仍为 Personal AI Workspace）</label><textarea id="${id}" data-chatgpt-prompt readonly rows="8">${e(prompt)}</textarea><button type="button" class="button secondary" data-copy-candidate-prompt>${e(button)}</button><p data-chatgpt-copy-status role="status" aria-live="polite"></p></section></details>`;
   const githubForm = (repo?: typeof data.githubProjects[number]) => `<form data-github-project${repo ? ' data-github-registered' : ''} class="library-form">
     <input type="hidden" name="expectedVersion" value="${repo?.recordVersion ?? 0}">
     <label>GitHub 项目地址<input name="repositoryUrl" type="url" required value="${e(repo?.repositoryUrl ?? "")}" placeholder="https://github.com/owner/repository"${repo ? " readonly" : ""}></label>

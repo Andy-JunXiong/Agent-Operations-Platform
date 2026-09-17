@@ -1,5 +1,7 @@
 # Domain Secondary Interfaces — Design Proposal v0.1
 
+> Historical decision/design context. Personal AI Workspace, PAW and Workspace product references use the former name. See [current product terminology and capability boundaries](AGENT_OPERATIONS_PLATFORM.md). Original proposals and acceptance limits remain scoped as written.
+
 **Status:** PROPOSED; design review only, 2026-09-05.
 
 **Runtime impact:** None. This proposal does not implement a UI, provision web

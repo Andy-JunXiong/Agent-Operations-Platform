@@ -1,5 +1,9 @@
 # Public repository sanitisation report
 
+This is the initial clean-edition audit. Its baseline counts and verification results
+are historical. The subsequent [positioning report](PUBLIC_REPOSITIONING_REPORT.md)
+records the current product name, changed public surfaces and updated validation.
+
 Recommendation: **CLEAN PUBLIC SHOWCASE REPO RECOMMENDED**.
 
 ## Continuity and benefits

@@ -1,6 +1,6 @@
 ---
 name: job-search-today-review
-description: Review the user's current Personal AI Workspace Job Search attention from live Workspace state. Use when the user asks what needs attention today, which applications or tasks need action, or requests a daily job-search review. Read-only; do not use for job-description or resume work, general lifecycle explanations, mail scans, or application and Task mutations.
+description: Review the user's current Agent Operations Platform Job Search attention from live Workspace state. Use when the user asks what needs attention today, which applications or tasks need action, or requests a daily job-search review. Read-only; do not use for job-description or resume work, general lifecycle explanations, mail scans, or application and Task mutations.
 ---
 
 # Job Search Today Review

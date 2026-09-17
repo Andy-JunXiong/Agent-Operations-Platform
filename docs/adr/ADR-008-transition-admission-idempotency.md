@@ -1,5 +1,7 @@
 # ADR-008 — Transition admission, concurrency, and idempotency
 
+> Historical decision/design context. Personal AI Workspace, PAW and Workspace product references use the former name. See [current product terminology and capability boundaries](../architecture/AGENT_OPERATIONS_PLATFORM.md). Original proposals and acceptance limits remain scoped as written.
+
 **Status:** Accepted for Spike 1A
 
 ## Decision

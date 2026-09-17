@@ -1,5 +1,9 @@
 # Core job workflow
 
+Jobs is the reference application of [Agent Operations Platform](AGENT_OPERATIONS_PLATFORM.md).
+The logical Trust Kernel describes the existing control mechanisms; the Workspace
+domain entity, tool names and persistence contracts retain their compatibility names.
+
 ## Ownership and durable state
 
 The AI host interprets evidence and interacts with the user. Workspace persists projects, candidates, observations, transitions, tasks, source references and receipt progress. The web interface uses the same services and database. Connected providers retain ownership of their native records.

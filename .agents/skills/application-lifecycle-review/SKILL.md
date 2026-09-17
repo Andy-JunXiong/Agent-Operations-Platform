@@ -1,6 +1,6 @@
 ---
 name: application-lifecycle-review
-description: Inspect one exact Personal AI Workspace Job Application and, when the user explicitly requests a lifecycle change, safely propose and admit it from live Workspace state. Use for named-application status, next-step, recruiter-response, or lifecycle-change requests. Read-only by default; do not use for broad daily reviews, mail scans, candidate decisions, resume work, or Task-only updates.
+description: Inspect one exact Agent Operations Platform Job Application and, when the user explicitly requests a lifecycle change, safely propose and admit it from live Workspace state. Use for named-application status, next-step, recruiter-response, or lifecycle-change requests. Read-only by default; do not use for broad daily reviews, mail scans, candidate decisions, resume work, or Task-only updates.
 ---
 
 # Application Lifecycle Review

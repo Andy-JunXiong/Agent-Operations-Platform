@@ -1,5 +1,7 @@
 # Architecture Review v0.1
 
+> Historical decision/design context. Personal AI Workspace, PAW and Workspace product references use the former name. See [current product terminology and capability boundaries](AGENT_OPERATIONS_PLATFORM.md). Original proposals and acceptance limits remain scoped as written.
+
 **Status:** REVIEWED — viable, with three material changes before implementation.
 
 ## Executive Decision

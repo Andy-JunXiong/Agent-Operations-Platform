@@ -50,8 +50,8 @@ function freshness(asOf: string, zone: string): string {
   return `<p class="freshness">上次读取 <time datetime="${e(asOf)}">${e(date(asOf, zone))}</time><span>${e(zone)}</span></p>`;
 }
 function contextCopy(kind: "Application" | "Task", id: string): string {
-  const text = kind === "Task" ? `请从 Personal AI Workspace 读取 Task ${id} 的最新状态、完成时间和版本。按我接下来的要求处理，确认并保存后只告诉我结果。`
-      : `请从 Personal AI Workspace 读取 Application / Project ${id} 的最新申请状态和待办任务。按我接下来的要求处理，确认并保存后只告诉我结果。`;
+  const text = kind === "Task" ? `请从 Agent Operations Platform（连接名称可能仍为 Personal AI Workspace） 读取 Task ${id} 的最新状态、完成时间和版本。按我接下来的要求处理，确认并保存后只告诉我结果。`
+      : `请从 Agent Operations Platform（连接名称可能仍为 Personal AI Workspace） 读取 Application / Project ${id} 的最新申请状态和待办任务。按我接下来的要求处理，确认并保存后只告诉我结果。`;
   return `<details class="context-handoff"><summary>在 ChatGPT 中处理</summary><section class="context-box"><div><h2>复制到 ChatGPT</h2><p>在对话中说明要更新的内容。保存后切回此页，会自动读取最新结果。</p></div><button type="button" class="button secondary" data-copy>复制引用</button><label class="sr-only" for="context-reference">可手动选取的上下文引用</label><textarea id="context-reference" readonly rows="3">${e(text)}</textarea></section></details>`;
 }
 function pageUrl(path: string, query: Record<string, unknown>): string {
@@ -65,7 +65,7 @@ function pagination<T>(page: ReadPage<T>, path: string, query: Record<string, un
 }
 
 export function document(title: string, content: string, authenticated: boolean, active = "today"): string {
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${e(title)} · Workspace</title><link rel="stylesheet" href="/assets/workspace.css"><script type="module" src="/assets/workspace.js"></script><script type="module" src="/assets/job-library.js"></script><script type="module" src="/assets/resume.js"></script><link rel="stylesheet" href="/assets/resume.css"></head><body data-authenticated="${authenticated}"><a class="skip" href="#main">跳到主要内容</a><aside class="sidebar"><a class="brand" href="${rootPath}/today"><span class="brand-mark" aria-hidden="true">w.</span><span>Workspace<small>你的持续工作空间</small></span></a><p class="nav-label">JOB SEARCH / 求职</p><nav aria-label="主要导航"><a href="${rootPath}/today"${active === "today" ? ' aria-current="page"' : ""}><span aria-hidden="true">◷</span> 今天 <small>Today</small></a><a href="${rootPath}/jobs"${active === "jobs" ? ' aria-current="page"' : ""}><span aria-hidden="true">◇</span> 职位 <small>Jobs</small></a><a href="${rootPath}/applications"${active === "applications" ? ' aria-current="page"' : ""}><span aria-hidden="true">▤</span> 我的申请</a><a href="${rootPath}/library"${active === "library" ? ' aria-current="page"' : ""}>求职／面试资料库</a><a href="${rootPath}/resume"${active === "resume" ? ' aria-current="page"' : ""}>简历 <small>Resume</small></a><a href="${rootPath}/platform-watch"${active === "reports" ? ' aria-current="page"' : ""}>平台判断 <small>Reports</small></a></nav><div class="sidebar-foot"><span class="connection-dot" aria-hidden="true"></span>同一份工作状态<p>查看进展，然后继续下一步。</p>${authenticated ? '<button type="button" class="text-button" data-logout>退出登录</button>' : ""}</div></aside><div class="workspace"><div class="topbar"><span>个人工作空间 <span class="slash">/</span> ${active === "reports" ? "平台判断" : "求职"}</span><span class="view-label">${active === "resume" ? "编辑简历" : active === "reports" ? "报告与决定" : "查看模式"}</span></div><div id="notice" class="notice" role="status" aria-live="polite" hidden></div><main id="main" tabindex="-1">${content}</main><footer>对话帮助你思考，Workspace 保存工作进度。</footer></div></body></html>`;
+  return `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${e(title)} · Agent Operations Platform</title><link rel="stylesheet" href="/assets/workspace.css"><script type="module" src="/assets/workspace.js"></script><script type="module" src="/assets/job-library.js"></script><script type="module" src="/assets/resume.js"></script><link rel="stylesheet" href="/assets/resume.css"></head><body data-authenticated="${authenticated}"><a class="skip" href="#main">跳到主要内容</a><aside class="sidebar"><a class="brand" href="${rootPath}/today"><span class="brand-mark" aria-hidden="true">w.</span><span>Agent Ops<small>受控 AI 工作流</small></span></a><p class="nav-label">JOB SEARCH / 求职</p><nav aria-label="主要导航"><a href="${rootPath}/today"${active === "today" ? ' aria-current="page"' : ""}><span aria-hidden="true">◷</span> 今天 <small>Today</small></a><a href="${rootPath}/jobs"${active === "jobs" ? ' aria-current="page"' : ""}><span aria-hidden="true">◇</span> 职位 <small>Jobs</small></a><a href="${rootPath}/applications"${active === "applications" ? ' aria-current="page"' : ""}><span aria-hidden="true">▤</span> 我的申请</a><a href="${rootPath}/library"${active === "library" ? ' aria-current="page"' : ""}>求职／面试资料库</a><a href="${rootPath}/resume"${active === "resume" ? ' aria-current="page"' : ""}>简历 <small>Resume</small></a><a href="${rootPath}/platform-watch"${active === "reports" ? ' aria-current="page"' : ""}>平台判断 <small>Reports</small></a></nav><div class="sidebar-foot"><span class="connection-dot" aria-hidden="true"></span>同一份工作状态<p>查看进展，然后继续下一步。</p>${authenticated ? '<button type="button" class="text-button" data-logout>退出登录</button>' : ""}</div></aside><div class="workspace"><div class="topbar"><span>Agent Operations Platform <span class="slash">/</span> ${active === "reports" ? "平台判断" : "求职"}</span><span class="view-label">${active === "resume" ? "编辑简历" : active === "reports" ? "报告与决定" : "查看模式"}</span></div><div id="notice" class="notice" role="status" aria-live="polite" hidden></div><main id="main" tabindex="-1">${content}</main><footer>Agent 提供推理，平台保存状态并校验操作权限。</footer></div></body></html>`;
 }
 
 export function loginView(returnTo: string): string {
@@ -354,8 +354,8 @@ const watchDecisionLabels: Record<string, string> = {
 const watchDirectionLabels: Record<string, string> = {
   IGNORE: "忽略",
   ADOPT: "采用平台能力",
-  REMOVE: "移除 PAW 实现",
-  DOUBLE_DOWN: "加强 PAW 能力",
+  REMOVE: "移除平台实现",
+  DOUBLE_DOWN: "加强平台能力",
 };
 
 function reportLink(id: string): string {
@@ -367,7 +367,7 @@ function reportStatus(report: PlatformWatchReport): string {
 }
 
 const watchJudgmentLabels: Record<PlatformWatchReport["directionalJudgment"], string> = {
-  NO_DRIFT: "大方向不变", NARROW: "减少自建范围", EXPAND: "扩大 PAW 的作用", REPOSITION: "重新考虑产品方向",
+  NO_DRIFT: "大方向不变", NARROW: "减少自建范围", EXPAND: "扩大平台的作用", REPOSITION: "重新考虑产品方向",
 };
 const watchVerificationLabels: Record<string, string> = {
   NOT_TESTED: "尚未实际验证", LIVE_VERIFIED: "已有实际验证，具体范围见分析",
@@ -407,7 +407,7 @@ export function platformWatchView(
 ): string {
   const reports = service.platformWatchService.listReports();
   const rows = reports.map((report) => `<article class="watch-report-row"><div class="grow"><p class="overline">${e(date(report.generatedAt, zone))} · ${e(watchJudgmentLabels[report.directionalJudgment])}</p><h2><a href="${reportLink(report.id)}">${e(report.title)}</a></h2><p>${e(report.summary)}</p></div><div class="row-status">${chip(report.pendingFindingCount ? "OPEN" : "DONE", reportStatus(report))}</div></article>`).join("");
-  const content = `${heading("PAW / 平台观察", "PAW 下一步，哪些值得改？", "从你的使用场景出发，比较现有做法和新选择，再决定投入在哪里。")}${freshness(asOf, zone)}${platformWatchImport(writesEnabled)}<section class="panel"><header class="section-heading"><h2>报告记录 <span class="count">${reports.length}</span></h2><span class="muted">最近 50 份</span></header>${rows || empty("尚未导入 Watch 报告", "定时报告仍在 ChatGPT 对话中；需要时可由登录用户明确导入。")}</section>`;
+  const content = `${heading("Agent Ops / 平台观察", "平台下一步，哪些值得改？", "从你的使用场景出发，比较现有做法和新选择，再决定投入在哪里。")}${freshness(asOf, zone)}${platformWatchImport(writesEnabled)}<section class="panel"><header class="section-heading"><h2>报告记录 <span class="count">${reports.length}</span></h2><span class="muted">最近 50 份</span></header>${rows || empty("尚未导入 Watch 报告", "定时报告仍在 ChatGPT 对话中；需要时可由登录用户明确导入。")}</section>`;
   return document("平台判断", content, true, "reports");
 }
 
@@ -434,6 +434,6 @@ export function platformWatchReportView(
   const source = safeExternalUrl(report.sourceUrl);
   const choices = report.findings.map((finding, index) => `<a href="#watch-choice-${index + 1}">${e(finding.title)}</a>`).join("");
   const provenance = `<details class="panel watch-report-meta"><summary>报告来源与时间</summary><div class="watch-meta-content"><dl><div><dt>整体建议</dt><dd>${e(watchJudgmentLabels[report.directionalJudgment])}</dd></div><div><dt>整理时间</dt><dd>${e(timelineDate(report.generatedAt, zone))}</dd></div><div><dt>资料查阅截止</dt><dd>${report.evidenceCutoff ? e(timelineDate(report.evidenceCutoff, zone)) : "未提供"}</dd></div><div><dt>参考代码版本</dt><dd>${report.repositorySha ? `<code>${e(report.repositorySha)}</code>` : "未提供"}</dd></div><div><dt>保存者编号</dt><dd><code>${e(report.createdByPrincipalId)}</code></dd></div></dl>${source ? `<a class="button secondary" href="${e(source)}" target="_blank" rel="noopener noreferrer">查看来源 ↗</a>` : ""}</div></details>`;
-  const content = `<div class="watch-reading"><a class="back-link" href="${rootPath}/platform-watch">← 平台判断</a>${heading("PAW / 平台观察", report.title, report.summary)}${freshness(asOf, zone)}${provenance}<article class="panel watch-report-body">${renderReportMarkdown(report.body)}</article><header class="watch-findings-heading"><div><h2>具体到 PAW，你想怎么做？</h2><p>${report.pendingFindingCount ? `${report.pendingFindingCount} 项仍待决定` : "已记录你的选择"}。每项对应下方写明的建议。</p></div></header><nav class="watch-choice-nav" aria-label="本报告的功能选择">${choices}</nav>${findingDecisionControls(report, writesEnabled)}</div>`;
+  const content = `<div class="watch-reading"><a class="back-link" href="${rootPath}/platform-watch">← 平台判断</a>${heading("Agent Ops / 平台观察", report.title, report.summary)}${freshness(asOf, zone)}${provenance}<article class="panel watch-report-body">${renderReportMarkdown(report.body)}</article><header class="watch-findings-heading"><div><h2>具体到本平台，你想怎么做？</h2><p>${report.pendingFindingCount ? `${report.pendingFindingCount} 项仍待决定` : "已记录你的选择"}。每项对应下方写明的建议。</p></div></header><nav class="watch-choice-nav" aria-label="本报告的功能选择">${choices}</nav>${findingDecisionControls(report, writesEnabled)}</div>`;
   return document("Watch 报告", content, true, "reports");
 }

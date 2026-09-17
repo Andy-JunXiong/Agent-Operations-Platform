@@ -1,5 +1,7 @@
 # State / Event Flow v0.1
 
+> Historical decision/design context. Personal AI Workspace, PAW and Workspace product references use the former name. See [current product terminology and capability boundaries](AGENT_OPERATIONS_PLATFORM.md). Original proposals and acceptance limits remain scoped as written.
+
 ## MVP — user-triggered, cross-conversation continuity
 
 ```mermaid

@@ -1,5 +1,9 @@
 # Platform Watch report-to-decision contract
 
+Platform Watch is a report-and-decision application in [Agent Operations Platform](AGENT_OPERATIONS_PLATFORM.md).
+Its domain-specific commands share identity and persistence infrastructure; this does
+not imply a general autonomous execution engine or an interchangeable domain plugin.
+
 Public technical excerpt. Personal operations and deployment ledgers are excluded.
 These contracts describe the code; they do not assert hosted-client or production acceptance.
 
