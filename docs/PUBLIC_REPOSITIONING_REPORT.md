@@ -7,7 +7,7 @@ The approved positioning review extends the [public sanitisation work](PUBLIC_SA
 ## Phase 1: audit and bounded plan
 
 - Clean-edition baseline: `343b13ef88977ac848e40a44f727a85141e69524` (327 publishable files, clean worktree).
-- Original source baseline: `74d8f88b218bcda73f3e0e1b7eb355d9dd02c677`; remote main was rechecked and still matches. The original remote remains public.
+- Original source baseline: `74d8f88b218bcda73f3e0e1b7eb355d9dd02c677`; remote main matched when rechecked. The original remote was public at this audit; it was subsequently made private during publication below.
 - Naming gaps: README, npm description, web branding, MCP availability description, ChatGPT handoff text, active Watch guidance and historical architecture documents mix product names and implementation identifiers.
 - One active Watch instruction still points to the original repository. Replace it with explicit selection of the reviewed showcase repository; never silently fall back to the original history.
 - Trust and control mechanisms exist across several modules. No independent Trust Kernel service, generic approval engine, workflow scheduler or portable delegated-agent grant layer is established by this rename.
@@ -34,7 +34,8 @@ Implementation plan: rewrite the README around Agent Operations Platform; docume
 All 329 publishable files were checked for private artifacts, prohibited personal
 patterns and secrets. The new public history was scanned separately. No new
 personal-data or credential findings were identified. The original audit findings
-remain unresolved in the original public repository; this work did not amend it.
+remain in the original repository's history; its visibility was subsequently changed
+to private, without rewriting that history.
 
 | Check | Result and scope |
 | --- | --- |
@@ -54,8 +55,9 @@ The initial `npm run verify` invocation stopped at the two test expectations abo
 it is not reported as a single uninterrupted pass. Corrected files were rechecked
 and the build was run separately. Broader tests were not repeated after narrow
 copy/assertion corrections because the unchanged components already had passing
-evidence. No production, hosted-agent, remote-CI or external-account acceptance is
-claimed. Browser checks used synthetic local data only; screenshots remain outside
+evidence. No production, hosted-agent or external-account acceptance is
+claimed. Subsequent hosted CI evidence is recorded in the publication section.
+Browser checks used synthetic local data only; screenshots remain outside
 the public tree.
 
 Version 0.1.1 packages were written to a separate local output directory because
@@ -87,19 +89,41 @@ text and handoff product names, not control flow or authority semantics.
 
 ## Residual risks and next steps
 
-Publish only this clean edition. The original repository still needs a separate
-visibility/history/PR/artifact remediation decision; making a new repository does
-not retract existing copies. No actual credential was found by this audit, but
+Only this clean edition is published. The original repository is now private;
+its history was retained. Further history/PR/artifact remediation and prior copies
+remain a separate concern; making a new repository does not retract existing copies.
+No actual credential was found by this audit, but
 any actual exposed credential subsequently identified must be rotated regardless
 of history deletion. Pattern scanning cannot guarantee semantic privacy.
 
 Product positioning is ready within the stated capability limits. Configure and
 verify any future host, enterprise connector or delegated-agent model before
 claiming support. AgentGov needs its own implementation review before any code
-reuse or lineage claim. No remote publication or deployment occurred in this pass.
+reuse or lineage claim. The positioning pass did not deploy a running service.
+Repository publication is recorded below.
 
 | Status | Decision |
 | --- | --- |
 | PUBLIC POSITIONING | **READY** |
 | CURRENT HEAD PRIVACY | **SAFE TO KEEP PUBLIC** for the clean edition within the documented local scan and review scope; not a verdict on the original repository |
 | GIT HISTORY | **CLEAN PUBLIC SHOWCASE REPO RECOMMENDED** for the original repository. This clean edition's separate history passed its secret scan. |
+
+## Publication — 2026-09-17
+
+The user authorized the next GitHub publication steps. The original repository
+was changed to private and its development history was retained. The independently
+created clean history was pushed to the public
+[Agent Operations Platform repository](https://github.com/Andy-JunXiong/Agent-Operations-Platform).
+The original history was not pushed, rewritten or force-pushed. Only the clean
+repository has this public remote.
+
+The first GitHub-hosted [Verify run](https://github.com/Andy-JunXiong/Agent-Operations-Platform/actions/runs/35178429256)
+checks source `51bf1ff7bd4f1438f2bfe4e2b2bd01d05f56c636` on Linux/Node 24.
+The public-data gate, Gitleaks history scan, synthetic demo, full repository
+verification, offline Watch tests and version 0.1.1 Skill packaging/upload all
+passed. This supplies hosted CI evidence in addition to the earlier local checks;
+it does not claim deployment or production-agent acceptance.
+
+The public repository link is the portfolio/resume entry. The original repository
+is retained as a private development record. Changes to visibility reduce further
+public access but cannot retract prior downloads, forks or cached copies.

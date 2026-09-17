@@ -1,5 +1,7 @@
 # Agent Operations Platform
 
+[![Verify](https://github.com/Andy-JunXiong/Agent-Operations-Platform/actions/workflows/verify.yml/badge.svg)](https://github.com/Andy-JunXiong/Agent-Operations-Platform/actions/workflows/verify.yml)
+
 **A production-oriented platform for governing AI-assisted workflows through durable state, explicit authority and controlled state transitions.**
 
 Agents reason. The platform governs durable state changes and execution admission.
