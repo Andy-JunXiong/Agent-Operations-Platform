@@ -1,10 +1,20 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { inspectFile, checkPublic } from './check-public.mjs';
+
+test('approves only the exact reviewed social cover, rejecting substitution and renamed media', () => {
+  const path = 'docs/assets/agent-operations-social.png';
+  const image = readFileSync(new URL('../' + path, import.meta.url));
+  assert.deepEqual(inspectFile(path, image), []);
+  assert.ok(inspectFile('docs/assets/another-cover.png', image).length);
+  assert.ok(inspectFile(path, Buffer.concat([image, Buffer.from('extra')])).length);
+  const modified = Buffer.from(image); modified[modified.length - 1] ^= 1;
+  assert.ok(inspectFile(path, modified).length);
+});
 
 test('rejects private artifacts and personal text without echoing their values', () => {
   for (const path of ['.env', '.env.production', 'data/private.sqlite', 'runtime/export.json', 'capture.png', 'backup.zip']) {

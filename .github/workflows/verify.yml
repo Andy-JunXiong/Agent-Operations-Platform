@@ -78,3 +78,33 @@ jobs:
           if-no-files-found: error
           retention-days: 30
           compression-level: 0
+
+      - name: Build and verify public architecture site
+        run: |
+          node --test scripts/build-showcase.test.mjs
+          npm run build:showcase
+
+      - name: Upload architecture site
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist/showcase
+
+  pages:
+    name: Publish architecture showcase
+    needs: verify
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Deploy architecture site
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -3,6 +3,7 @@ import { mkdtempSync, readFileSync, writeFileSync, mkdirSync, lstatSync, rmSync 
 import { tmpdir } from 'node:os';
 import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const ignoredEmailExamples = new Set(['example.com', 'example.test', 'example.invalid']);
@@ -10,6 +11,10 @@ const ignoredEmailExamples = new Set(['example.com', 'example.test', 'example.in
 const providerEmailTests = new Set(['tests/integration/job-library.test.ts', 'tests/integration/skill-library.test.ts']);
 
 export function inspectFile(path, bytes) {
+  // Only this visually reviewed raster of our original public SVG is approved.
+  // A renamed, modified or replacement image must undergo a new review.
+  if (path === 'docs/assets/agent-operations-social.png'
+    && createHash('sha256').update(bytes).digest('hex') === 'dbdbd44a5bbc333c44a27f4dee00a073d9b646fa2f299cc87111bfc8c89a7b5e') return [];
   const issues = [];
   const add = rule => issues.push({ path, rule }); // Never print matched secrets or personal text.
   if (/(^|\/)(?:\.env(?:\..*)?|credentials[^/]*|id_rsa|id_ed25519)$/i.test(path) && !path.endsWith('.example')) add('private configuration');

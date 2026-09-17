@@ -1,6 +1,6 @@
 # Architecture showcase and reference sandbox
 
-**[Explore the public architecture](https://agent-operations-demo.agentops-portfolio.workers.dev)**
+**[Explore the public architecture](https://andy-junxiong.github.io/Agent-Operations-Platform/)**
 
 ## Continuity and benefits
 
@@ -36,6 +36,43 @@ easier to compare in a portfolio without changing domain or authority contracts.
 The acceptance gate is cover rendering, link validation, responsive navigation,
 public-data checks and the existing CI. The cover is a conceptual illustration,
 not a screenshot of deployed production infrastructure.
+
+## LinkedIn sharing and static publication
+
+LinkedIn could not preview the original Worker URL. Inspection found missing
+Open Graph metadata and `HEAD /` returning 404 despite `GET /` returning 200.
+The architecture now has a canonical GitHub Pages entry, server-rendered sharing
+metadata, and a reviewed 1200 x 630 PNG cover. The Worker supports HEAD for static
+assets and serves the same architecture HTML. These changes enable portfolio
+sharing while preserving the optional synthetic Jobs sandbox on its Worker host.
+A shared HTML source keeps future architecture updates consistent across hosts.
+Actual LinkedIn preview generation and its cache remain external acceptance.
+
+Share `https://andy-junxiong.github.io/Agent-Operations-Platform/` on LinkedIn.
+If a cached preview persists, inspect that URL with
+[LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) and re-add it.
+The metadata follows [LinkedIn's website sharing requirements](https://www.linkedin.com/help/linkedin/answer/a521928/making-your-website-shareable-on-linkedin).
+The reviewed image is described in the [public data policy](../PUBLIC_DATA_POLICY.md#reviewed-illustration).
+
+`npm run build:showcase` copies only architecture HTML/CSS/JS, the reviewed cover
+and `.nojekyll` into `dist/showcase`. It copies no backend, configuration or
+operational data. Relative asset/home links work under the GitHub Pages project
+path; the Jobs link explicitly opens the Worker. The Verify workflow publishes
+this artifact to GitHub Pages only on main after all existing verification gates
+pass. Pull requests build and test it without deploying. GitHub Pages must be
+configured with GitHub Actions as its publishing source.
+
+Acceptance covers the build's publication boundary, share tags and image size,
+GET/HEAD responses without sessions, public-data guard substitution checks,
+public asset availability and browser navigation at desktop/mobile sizes. The
+existing CI runs the broader platform suite; local runtime checks focus on the
+changed showcase and Worker routes.
+
+Local acceptance passed: Worker type checking and 12 test results, three public-guard
+tests, the Pages artifact contract, the publishable-file/secret scan, and browser
+navigation at 1440, 1024, 768, 390 and 320 pixels with no script errors, horizontal
+overflow or homepage API calls. This verifies site behavior, not a logged-in
+LinkedIn preview. Online publication is gated by the Verify workflow.
 
 ## Two levels of exploration
 
@@ -148,8 +185,9 @@ prerequisites. No account identifier or credential is checked into this repo.
 `npm run deploy` builds the HTML/CSS/JS into the Worker before uploading; do not
 deploy the unbundled TypeScript entry directly, because its asset constants are
 provided by `build.mjs`. The source entry in `wrangler.jsonc` supports generation
-of typed Durable Object bindings. CI verifies the demo but does not automatically
-deploy it or require deployment credentials.
+of typed Durable Object bindings. CI verifies the Worker but does not automatically
+deploy it or require Cloudflare credentials. The static GitHub Pages architecture
+is published separately by the verified Pages job described above.
 
 Cloudflare references: [SQLite storage and transactions](https://developers.cloudflare.com/durable-objects/api/sqlite-storage-api/),
 [Durable Object pricing and free-plan limits](https://developers.cloudflare.com/durable-objects/platform/pricing/).

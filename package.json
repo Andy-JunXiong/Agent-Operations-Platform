@@ -22,7 +22,8 @@
     "web:check": "node dist/scripts/check-web-release.js",
     "demo:synthetic": "tsx scripts/demo-synthetic.ts",
     "check:public": "node scripts/check-public.mjs",
-    "test:public": "node --test scripts/check-public.test.mjs"
+    "test:public": "node --test scripts/check-public.test.mjs",
+    "build:showcase": "node scripts/build-showcase.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",

@@ -46,6 +46,23 @@ test('live Worker and SQLite session contract', async t => {
       assert.equal(state.version, 1);
       assert.ok(state.expiresAt > Date.now() && state.expiresAt <= Date.now() + 3600000);
     });
+    await t.test('crawlers can read share metadata and HEAD static pages without creating a session', async () => {
+      const headers = { 'User-Agent': 'LinkedInBot/1.0' };
+      const page = await mf.dispatchFetch('https://demo.example.test/', { headers });
+      const html = await page.text();
+      for (const tag of ['og:title', 'og:description', 'og:image', 'og:url']) assert.ok(html.includes(`property="${tag}"`));
+      assert.equal(page.headers.get('set-cookie'), null);
+      for (const path of ['/', '/reference/jobs', '/reference/jobs/', '/architecture.css', '/architecture.js', '/style.css', '/app.js', '/robots.txt']) {
+        const get = await mf.dispatchFetch('https://demo.example.test' + path, { headers });
+        const head = await mf.dispatchFetch('https://demo.example.test' + path, { method: 'HEAD', headers });
+        assert.equal(head.status, 200, path);
+        assert.equal(await head.text(), '');
+        assert.equal(head.headers.get('content-type'), get.headers.get('content-type'));
+        assert.equal(head.headers.get('set-cookie'), null);
+      }
+      assert.equal((await mf.dispatchFetch('https://demo.example.test/api/session', { method: 'HEAD', headers })).status, 405);
+      assert.equal((await mf.dispatchFetch('https://demo.example.test/unknown', { method: 'HEAD', headers })).status, 404);
+    });
     await t.test('origin, schema, size and ordering reject unsupported input', async () => {
       assert.equal((await call('/api/action', cookie, { action: 'observe' }, { Origin: 'https://untrusted.example.test' })).response.status, 403);
       assert.equal((await call('/api/action', cookie, { action: 'observe', text: 'not accepted' })).response.status, 400);

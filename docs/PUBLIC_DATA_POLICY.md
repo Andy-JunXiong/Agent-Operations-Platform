@@ -30,5 +30,12 @@ The original vector cover at `docs/assets/agent-operations-platform.svg` is appr
 for this public portfolio. It is a conceptual architecture illustration authored
 from public component responsibilities, not a screenshot or a derivative of
 private operational records. Its source contains no scripts, external resource
-references, embedded images or personal identifiers. The existing binary/media
-artifact guard remains unchanged; this review applies only to the named SVG.
+references, embedded images or personal identifiers.
+
+`docs/assets/agent-operations-social.png` is its visually reviewed 1200 x 630 PNG
+render for social previews, with dark margins preserving the complete SVG. It
+contains only the public illustration, not a browser or operational screenshot.
+The public guard allows only that exact path and SHA-256 digest:
+`dbdbd44a5bbc333c44a27f4dee00a073d9b646fa2f299cc87111bfc8c89a7b5e`.
+Changed bytes, a different filename and all other unreviewed media still fail.
+Re-exporting the cover requires another visual/provenance review and digest update.

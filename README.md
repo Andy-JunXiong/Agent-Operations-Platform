@@ -1,7 +1,7 @@
 # Agent Operations Platform
 
 [![CI](https://github.com/Andy-JunXiong/Agent-Operations-Platform/actions/workflows/verify.yml/badge.svg)](https://github.com/Andy-JunXiong/Agent-Operations-Platform/actions/workflows/verify.yml)
-[![Architecture showcase](https://img.shields.io/badge/Architecture-explore-2e6b50)](https://agent-operations-demo.agentops-portfolio.workers.dev)
+[![Architecture showcase](https://img.shields.io/badge/Architecture-explore-2e6b50)](https://andy-junxiong.github.io/Agent-Operations-Platform/)
 
 **From agent reasoning to durable operations.**
 
@@ -9,14 +9,14 @@ Agent Operations Platform keeps AI-assisted work grounded in evidence, explicit
 authority and durable business state. Agents interpret and propose; the platform
 governs accepted changes and preserves the results across conversations.
 
-[![Agent Operations Platform: AI reasoning flows through platform controls and explicit authority into durable state, tasks and receipts.](docs/assets/agent-operations-platform.svg)](https://agent-operations-demo.agentops-portfolio.workers.dev)
+[![Agent Operations Platform: AI reasoning flows through platform controls and explicit authority into durable state, tasks and receipts.](docs/assets/agent-operations-platform.svg)](https://andy-junxiong.github.io/Agent-Operations-Platform/)
 
 <p align="center"><strong>Follow one operation from evidence to a durable result.</strong></p>
 
 <p align="center">
-  <a href="https://agent-operations-demo.agentops-portfolio.workers.dev/#architecture">Explore the architecture →</a> ·
-  <a href="https://agent-operations-demo.agentops-portfolio.workers.dev/#operation">Follow one operation</a> ·
-  <a href="https://agent-operations-demo.agentops-portfolio.workers.dev/#evidence">Inspect implementation evidence</a>
+  <a href="https://andy-junxiong.github.io/Agent-Operations-Platform/#architecture">Explore the architecture →</a> ·
+  <a href="https://andy-junxiong.github.io/Agent-Operations-Platform/#operation">Follow one operation</a> ·
+  <a href="https://andy-junxiong.github.io/Agent-Operations-Platform/#evidence">Inspect implementation evidence</a>
 </p>
 
 > **Project status:** Implemented TypeScript/Node.js platform with SQLite persistence,

@@ -142,7 +142,7 @@ function json(data: Result, cookie?: string): Response {
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
-    if (request.method === 'GET') {
+    if (request.method === 'GET' || request.method === 'HEAD') {
       const assets: Record<string, [string, string]> = {
         '/': [ARCHITECTURE_HTML, 'text/html'],
         '/architecture.css': [ARCHITECTURE_CSS, 'text/css'], '/architecture.js': [ARCHITECTURE_JS, 'text/javascript'],
@@ -152,7 +152,7 @@ export default {
       };
       if (assets[url.pathname]) {
         const [body, type] = assets[url.pathname];
-        return new Response(body, { headers: { ...headers, 'Content-Type': `${type}; charset=utf-8` } });
+        return new Response(request.method === 'HEAD' ? null : body, { headers: { ...headers, 'Content-Type': `${type}; charset=utf-8` } });
       }
     }
     if (!['/api/session', '/api/state', '/api/action'].includes(url.pathname)) return json(result(404, 'NOT_FOUND', 'Route not found.'));

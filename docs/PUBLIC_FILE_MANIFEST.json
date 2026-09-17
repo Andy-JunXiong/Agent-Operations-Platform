@@ -567,6 +567,10 @@
       "treatment": "ADDED"
     },
     {
+      "path": "docs/assets/agent-operations-social.png",
+      "treatment": "ADDED"
+    },
+    {
       "path": "docs/cloud/C0_READINESS_REVIEW.md",
       "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
     },
@@ -965,6 +969,14 @@
     {
       "path": "scripts/benchmark-job-search-queries.ts",
       "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/build-showcase.mjs",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "scripts/build-showcase.test.mjs",
+      "treatment": "ADDED"
     },
     {
       "path": "scripts/check-application-preparation.ts",
@@ -1885,5 +1897,21 @@
     "docs/examples/ONLINE_DEMO.md",
     "docs/PUBLIC_FILE_MANIFEST.json",
     "docs/PUBLIC_DATA_POLICY.md"
+  ],
+  "socialPreviewChanges": [
+    ".github/workflows/verify.yml",
+    "README.md",
+    "demo/src/worker.ts",
+    "demo/test/workflow.test.mjs",
+    "demo/web/architecture.html",
+    "docs/PUBLIC_DATA_POLICY.md",
+    "docs/PUBLIC_FILE_MANIFEST.json",
+    "docs/assets/agent-operations-social.png",
+    "docs/examples/ONLINE_DEMO.md",
+    "package.json",
+    "scripts/build-showcase.mjs",
+    "scripts/build-showcase.test.mjs",
+    "scripts/check-public.mjs",
+    "scripts/check-public.test.mjs"
   ]
 }
