@@ -33,7 +33,26 @@ The public scan uses the standard Gitleaks rules with an exact path-and-line exc
 
 ## Validation
 
-Validation is in progress. This document must be updated with completed results before publication. No public-safety verdict is claimed for the original repository.
+Verified on Node.js 24.15.0 in a separate clean repository, with no original Git history or private runtime data:
+
+| Check | Result |
+| --- | --- |
+| `npm ci` from the existing lockfile | PASS |
+| `npm run verify` | PASS: both TypeScript configurations, 522 tests in 64 files, production build |
+| `npm run demo:synthetic` | PASS: all lifecycle, retry, authority, concurrency and reopen assertions |
+| `npm run test:public` | PASS: 2 guard tests, including tracked ignored files, new files and missing scanner |
+| `npm run check:public` | PASS: 327 publishable files and Gitleaks 8.30.1 |
+| Gitleaks on the new repository history | PASS: no credential findings |
+| Offline Watch material tests | PASS: 5 tests |
+| Python resume-template tests | PASS: 7 tests |
+| Pinned Workspace Skill packaging | PASS: both packages |
+| File/link inventory and `git diff --check` | PASS |
+
+The staging verification initially exposed CRLF/LF differences in copied Skill files and a Windows file-symlink privilege requirement. Canonical Skill bytes were normalized to LF; hashed public snapshots preserve exact bytes; Windows tests use junctions to exercise the same no-links guard. The complete clean-edition verification then passed without skipped tests. CI configuration has been updated but has not run on a remote for this edition.
+
+327 publishable files comprise 267 unchanged original files (normalizing line endings), 45 modified original files and 15 added files. 99 original paths are excluded only from this public edition. All original application source files, all 20 migrations and all automatic test files remain present. Runtime edits are limited to one attribution comment and one synthetic UI placeholder; test examples and the cloud sample-zone guard are also sanitized. No authority, persistence or lifecycle implementation was redesigned.
+
+**This edition passes the stated local publication checks. The original repository does not receive a public-safety verdict.**
 
 ## History and residual risks
 
