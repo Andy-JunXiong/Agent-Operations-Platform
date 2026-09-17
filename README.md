@@ -151,6 +151,12 @@ for ongoing maintenance. Actual LinkedIn preview acceptance remains separate.
 
 ## Verification
 
+The [mail discovery follow-up](docs/HISTORY.md#september-17-mail-discovery-follow-up)
+adds the literal phrase `interest in joining` to subject discovery. Its synthetic
+regression keeps full-body review separate from acknowledgement and business
+admission. This source update does not establish live mailbox or hosted execution
+acceptance and does not change the separate reference sandbox.
+
 ```text
 npm run verify
 npm run test:public

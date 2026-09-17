@@ -1,6 +1,6 @@
 /** Literal search criteria; email content never supplies Gmail query operators. */
 export const JOB_MAIL_KEYWORDS = ["job", "jobs", "interview", "interviews", "application", "applied", "applying",
-  "assessment", "offer", "recruiter", "recruitment", "招聘", "面试", "申请", "录用"];
+  "assessment", "offer", "recruiter", "recruitment", "interest in joining", "招聘", "面试", "申请", "录用"];
 export type JobMailCriteria = { companies: string[]; senders: string[] };
 export const searchLiteral = (value: string) => value.normalize("NFKC").replace(/[^\p{L}\p{N}\s]/gu," ").replace(/\s+/g," ").trim();
 export function jobMailQuery(criteria: JobMailCriteria): string {

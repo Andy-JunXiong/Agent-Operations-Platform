@@ -47,7 +47,7 @@ Start with the [product overview](../README.md), [architecture and Trust Kernel 
 - [State / Event Flow v0.1](architecture/STATE_EVENT_FLOW_v0.1.md)
 - [State Model v0.1](architecture/STATE_MODEL_v0.1.md)
 - [System Context v0.1](architecture/SYSTEM_CONTEXT_v0.1.md)
-- [Engineering evolution](HISTORY.md): September 17 portfolio milestone and its remaining acceptance boundaries.
+- [Engineering evolution](HISTORY.md): September 17 portfolio publication and bounded mail-discovery follow-up; source verification is separate from live acceptance.
 - [Public positioning and portfolio-hardening report](PUBLIC_REPOSITIONING_REPORT.md)
 - [Public repository sanitisation report](PUBLIC_SANITISATION_REPORT.md)
 

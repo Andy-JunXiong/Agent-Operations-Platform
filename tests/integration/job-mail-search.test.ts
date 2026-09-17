@@ -72,6 +72,29 @@ it("retains acknowledged application sender metadata for later follow-up and alw
   expect(w.fullReads.filter(id=>id==="a1")).toHaveLength(1);
 });
 
+it("discovers interest-in-joining confirmations without company history or automatic acknowledgement", async () => {
+  const w = fixture();
+  delete w.sources.a1;
+  delete w.sources.b1;
+  w.sources.c1 = { subject: "Thanks for your interest in joining New Example!",
+    sender: "talent@hiring.example.test", body: "We received your application for the Engineer opportunity." };
+  w.sources.d1 = { subject: "Thanks for your interest in our newsletter",
+    sender: "news@hiring.example.test", body: "Weekly product news." };
+  const criteria = { companies: [], senders: [] };
+  expect(jobMailQuery(criteria)).toContain('subject:"interest in joining"');
+  expect(matchesJobMail(w.sources.c1.subject, w.sources.c1.sender, criteria)).toBe("JOB_SUBJECT");
+  expect(matchesJobMail(w.sources.d1.subject, w.sources.d1.sender, criteria)).toBeNull();
+  const run = w.begin();
+  const result = await w.service.mailBatchService.next(w.args(run), w.reader);
+  expect(w.queries[0]).toContain('subject:"interest in joining"');
+  expect(w.queries[0]).not.toContain('subject:"New Example"');
+  expect(w.fullReads).toEqual(["c1"]);
+  expect(result.messages).toHaveLength(1);
+  expect(result.messages[0]).toMatchObject({ id: "c1", processable: true });
+  expect(w.service.mailScanService.get(run).status).toBe("RUNNING");
+  expect(w.database.prepare("SELECT count(*) n FROM mail_scan_processed").get()).toEqual({ n: 0 });
+});
+
 it("caps interrupted recovery at 72 hours, excludes old windows without acknowledgements, and forbids mode downgrade",async()=>{
   const w=fixture();const run=w.begin();await w.service.mailBatchService.next(w.args(run),w.reader);
   w.service.mailScanLedger.settle(run,"Synthetic interruption");w.advance(5);

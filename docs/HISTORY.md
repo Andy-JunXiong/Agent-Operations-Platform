@@ -6,6 +6,31 @@ and PAW identify earlier project stages and retained compatibility identifiers. 
 
 This public overview preserves engineering milestones without a personal operational diary.
 
+## September 17 mail discovery follow-up
+
+### Continuity and benefits
+
+A subject-discovery gap motivates a bounded phrase addition: confirmations that
+say `interest in joining` can reach body review even without prior company/sender
+history. This selected source update adds a synthetic regression, not operational
+records or deployment artifacts. It enables subsequent real-provider recall
+acceptance. The immediate benefit is explicit coverage of the missed wording;
+the durable benefit is preserving the distinction between discovery, evidence
+review and authorized admission as discovery criteria evolve.
+
+The regression checks positive confirmation matching, a negative newsletter
+subject, full-body selection, and the absence of automatic acknowledgement.
+Existing scan windows, company follow-up and admission contracts are unchanged.
+Local verification passed 23 tests across search, mail-batch and Gmail MCP,
+both TypeScript configurations, and three public-guard tests. The public-data
+gate inspected 349 publishable files and passed its pinned Gitleaks 8.30.1 scan.
+Diff/reference review passed. The full application suite was not rerun locally
+for this bounded source change; existing CI remains unchanged and runs on push.
+
+Publication is a source milestone only. It does not deploy the platform or the
+optional sandbox, configure a schedule, access an account or prove live recall.
+Private source history and operational acceptance records are not included.
+
 ## September 17 portfolio publication
 
 ### Continuity and benefits
