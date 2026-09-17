@@ -8,16 +8,20 @@ Agents reason. The platform governs durable state changes and execution admissio
 
 The platform supplies operational controls behind AI agents. **Jobs** is the complete reference application; **Platform Watch** provides report storage and controlled decisions. Both make the design concrete. This public edition contains synthetic examples and the implementation, with personal operational records excluded.
 
-## Try it in your browser
+## Explore the architecture
 
-**[Open the interactive demo](https://agent-operations-demo.agentops-portfolio.workers.dev)** ? no login or setup.
+**[Open the architecture showcase](https://agent-operations-demo.agentops-portfolio.workers.dev)**
 
-Record synthetic evidence, create a proposal, explicitly approve the transition,
-then test a missing-approval request, an exact retry and a stale write. Refresh
-to verify server persistence. The demo shares the actual lifecycle/task rules
-and uses an isolated Cloudflare adapter with per-visitor temporary storage.
-Suggestions are preset; no model or external business action runs.
-See [the demo architecture and walkthrough](docs/examples/ONLINE_DEMO.md).
+Explore the responsibilities of the AI host, MCP/Web entry points, application
+services, logical controls and durable state. Select a component for its boundaries
+and source evidence, or step through an illustrated operation from evidence to
+readback. The homepage makes no model calls and starts no sandbox session.
+
+The optional [Jobs reference workflow](https://agent-operations-demo.agentops-portfolio.workers.dev/reference/jobs)
+demonstrates approval and persistence with synthetic data and a preset suggestion.
+Engineering details expand on demand. Platform Watch links to its implemented
+report-and-decision contract. See [the showcase guide](docs/examples/ONLINE_DEMO.md)
+for the distinction between the real platform and the isolated demo adapter.
 
 ## Engineering problem
 
@@ -92,7 +96,7 @@ The deterministic result is `RECRUITER_CONTACT`, lifecycle version `2`, and one 
 | `src/mcp/`, `src/auth/`, `src/web/` | MCP, identity and web boundaries |
 | `db/migrations/` | Complete ordered schema evolution |
 | `tests/` | Unit, integration and synthetic acceptance checks |
-| `demo/` | Independent interactive portfolio sandbox and server integration tests |
+| `demo/` | Architecture showcase, optional reference sandbox and server integration tests |
 | `fixtures/synthetic/` | Public demo inputs and reviewed Watch snapshots |
 | `deploy/cloud/` | Parameterized deployment, backup and recovery tooling |
 | `docs/adr/`, `docs/architecture/` | Decisions, technical contracts and labeled proposals |

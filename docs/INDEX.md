@@ -18,7 +18,7 @@ Start with the [product overview](../README.md), [architecture and Trust Kernel 
 - [Named per-job resume versions](architecture/RESUME_VARIANTS.md)
 - [Skill and project evidence library](architecture/SKILL_LIBRARY.md)
 - [Development Continuity and Benefits Standard v0.1](DEVELOPMENT_CONTINUITY_STANDARD.md)
-- [Interactive portfolio sandbox](examples/ONLINE_DEMO.md)
+- [Architecture showcase and reference sandbox](examples/ONLINE_DEMO.md)
 - [Synthetic lifecycle walkthrough](examples/SYNTHETIC_DEMO.md)
 - [Public data policy](PUBLIC_DATA_POLICY.md)
 - [Platform Watch contract](strategy/OPENAI_PLATFORM_WATCH.md)

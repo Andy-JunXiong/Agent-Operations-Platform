@@ -94,7 +94,10 @@ const admit = (confirmed, alternate = false, retry = false) => ({
 $('approval').addEventListener('change', render);
 $('primary').addEventListener('click', () => {
   if (!state) return request('/api/session');
-  if (state.receipt) return $('safeguards').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  if (state.receipt) {
+    $('engineering-details').open = true;
+    return $('safeguards').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  }
   const command = state.proposal ? admit($('approval').checked) : { action: state.observed ? 'propose' : 'observe' };
   return request('/api/action', command);
 });

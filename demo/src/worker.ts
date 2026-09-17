@@ -5,6 +5,9 @@ import type { LifecycleState } from '../../src/domain/types.js';
 declare const DEMO_HTML: string;
 declare const DEMO_CSS: string;
 declare const DEMO_JS: string;
+declare const ARCHITECTURE_HTML: string;
+declare const ARCHITECTURE_CSS: string;
+declare const ARCHITECTURE_JS: string;
 
 const TTL = 60 * 60 * 1000;
 const COOKIE = '__Host-aop_demo';
@@ -141,7 +144,10 @@ export default {
     const url = new URL(request.url);
     if (request.method === 'GET') {
       const assets: Record<string, [string, string]> = {
-        '/': [DEMO_HTML, 'text/html'], '/style.css': [DEMO_CSS, 'text/css'], '/app.js': [DEMO_JS, 'text/javascript'],
+        '/': [ARCHITECTURE_HTML, 'text/html'],
+        '/architecture.css': [ARCHITECTURE_CSS, 'text/css'], '/architecture.js': [ARCHITECTURE_JS, 'text/javascript'],
+        '/reference/jobs': [DEMO_HTML, 'text/html'], '/reference/jobs/': [DEMO_HTML, 'text/html'],
+        '/style.css': [DEMO_CSS, 'text/css'], '/app.js': [DEMO_JS, 'text/javascript'],
         '/robots.txt': ['User-agent: *\nDisallow: /api/\n', 'text/plain'],
       };
       if (assets[url.pathname]) {

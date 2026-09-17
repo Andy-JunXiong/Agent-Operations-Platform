@@ -191,6 +191,18 @@
       "treatment": "ADDED"
     },
     {
+      "path": "demo/web/architecture.css",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/web/architecture.html",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/web/architecture.js",
+      "treatment": "ADDED"
+    },
+    {
       "path": "demo/web/index.html",
       "treatment": "ADDED"
     },
@@ -1844,6 +1856,21 @@
     "demo/web/style.css",
     "demo/worker-configuration.d.ts",
     "demo/wrangler.jsonc",
+    "docs/examples/ONLINE_DEMO.md"
+  ],
+  "architectureShowcaseChanges": [
+    "README.md",
+    "demo/build.mjs",
+    "demo/src/worker.ts",
+    "demo/test/workflow.test.mjs",
+    "demo/web/app.js",
+    "demo/web/architecture.css",
+    "demo/web/architecture.html",
+    "demo/web/architecture.js",
+    "demo/web/index.html",
+    "demo/web/style.css",
+    "docs/INDEX.md",
+    "docs/PUBLIC_FILE_MANIFEST.json",
     "docs/examples/ONLINE_DEMO.md"
   ]
 }

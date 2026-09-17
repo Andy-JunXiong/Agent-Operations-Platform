@@ -27,7 +27,17 @@ test('live Worker and SQLite session contract', async t => {
     await t.test('page is public; state is private and cookie is protected', async () => {
       const page = await mf.dispatchFetch('https://demo.example.test/');
       assert.equal(page.status, 200);
-      assert.match(await page.text(), /Agents propose/);
+      const html = await page.text();
+      assert.match(html, /Agents reason/);
+      assert.match(html, /architecture\.js/);
+      assert.doesNotMatch(html, /ExampleCorp|src="\/app\.js"/);
+      assert.equal(page.headers.get('Set-Cookie'), null);
+      const reference = await mf.dispatchFetch('https://demo.example.test/reference/jobs');
+      assert.equal(reference.status, 200);
+      assert.match(await reference.text(), /ExampleCorp/);
+      for (const asset of ['/architecture.js', '/architecture.css']) {
+        assert.equal((await mf.dispatchFetch('https://demo.example.test' + asset)).status, 200);
+      }
       assert.match(page.headers.get('Content-Security-Policy'), /frame-ancestors 'none'/);
       assert.equal((await call('/api/state')).response.status, 401);
       const start = await call('/api/session', null, {});
