@@ -21,6 +21,22 @@ the existing reference workflow checks, a public-data scan and repository CI.
 The original production system, provider access and scheduled operations remain
 outside this deployment. Existing service evidence is retained.
 
+## Portfolio entry and narrative
+
+The README follows the portfolio entry pattern used by the related GLAP, AgentGov
+and NYC projects: a concise positioning statement, CI/showcase badges, an original
+architecture cover, three reading paths and an explicit implementation status.
+The cover is a repository-owned SVG with no embedded scripts or external assets.
+
+The opening question, "Who remembers what was approved and what actually changed?",
+connects the architecture to continuity across AI conversations. Visitors can
+explore the system, follow one illustrated operation or inspect implementation
+evidence before entering a reference application. This makes the project's role
+easier to compare in a portfolio without changing domain or authority contracts.
+The acceptance gate is cover rendering, link validation, responsive navigation,
+public-data checks and the existing CI. The cover is a conceptual illustration,
+not a screenshot of deployed production infrastructure.
+
 ## Two levels of exploration
 
 - `/`: an architecture overview with seven selectable responsibilities, source

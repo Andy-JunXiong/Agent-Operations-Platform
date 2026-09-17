@@ -22,4 +22,13 @@ Ignored local files are not publication inputs; `.gitignore` is not a history-re
 
 ## Limitations
 
-Pattern scanning cannot prove the absence of personal narratives, new credential formats or sensitive screenshots. No media is approved in this baseline. Review additions for relationships, context and provenance, not just names. Never publish a sanitisation report containing the sensitive original text.
+Pattern scanning cannot prove the absence of personal narratives, new credential formats or sensitive screenshots. Operational screenshots and unreviewed media remain excluded. Review additions for relationships, context and provenance, not just names. Never publish a sanitisation report containing the sensitive original text.
+
+## Reviewed illustration
+
+The original vector cover at `docs/assets/agent-operations-platform.svg` is approved
+for this public portfolio. It is a conceptual architecture illustration authored
+from public component responsibilities, not a screenshot or a derivative of
+private operational records. Its source contains no scripts, external resource
+references, embedded images or personal identifiers. The existing binary/media
+artifact guard remains unchanged; this review applies only to the named SVG.

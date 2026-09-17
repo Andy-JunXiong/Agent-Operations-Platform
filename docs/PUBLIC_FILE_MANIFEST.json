@@ -563,6 +563,10 @@
       "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
     },
     {
+      "path": "docs/assets/agent-operations-platform.svg",
+      "treatment": "ADDED"
+    },
+    {
       "path": "docs/cloud/C0_READINESS_REVIEW.md",
       "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
     },
@@ -1872,5 +1876,14 @@
     "docs/INDEX.md",
     "docs/PUBLIC_FILE_MANIFEST.json",
     "docs/examples/ONLINE_DEMO.md"
+  ],
+  "portfolioEntryChanges": [
+    "README.md",
+    "demo/web/architecture.html",
+    "demo/web/architecture.css",
+    "docs/assets/agent-operations-platform.svg",
+    "docs/examples/ONLINE_DEMO.md",
+    "docs/PUBLIC_FILE_MANIFEST.json",
+    "docs/PUBLIC_DATA_POLICY.md"
   ]
 }

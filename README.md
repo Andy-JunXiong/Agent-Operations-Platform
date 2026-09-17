@@ -1,27 +1,52 @@
 # Agent Operations Platform
 
-[![Verify](https://github.com/Andy-JunXiong/Agent-Operations-Platform/actions/workflows/verify.yml/badge.svg)](https://github.com/Andy-JunXiong/Agent-Operations-Platform/actions/workflows/verify.yml)
+[![CI](https://github.com/Andy-JunXiong/Agent-Operations-Platform/actions/workflows/verify.yml/badge.svg)](https://github.com/Andy-JunXiong/Agent-Operations-Platform/actions/workflows/verify.yml)
+[![Architecture showcase](https://img.shields.io/badge/Architecture-explore-2e6b50)](https://agent-operations-demo.agentops-portfolio.workers.dev)
 
-**A production-oriented platform for governing AI-assisted workflows through durable state, explicit authority and controlled state transitions.**
+**From agent reasoning to durable operations.**
 
-Agents reason. The platform governs durable state changes and execution admission.
+Agent Operations Platform keeps AI-assisted work grounded in evidence, explicit
+authority and durable business state. Agents interpret and propose; the platform
+governs accepted changes and preserves the results across conversations.
 
-The platform supplies operational controls behind AI agents. **Jobs** is the complete reference application; **Platform Watch** provides report storage and controlled decisions. Both make the design concrete. This public edition contains synthetic examples and the implementation, with personal operational records excluded.
+[![Agent Operations Platform: AI reasoning flows through platform controls and explicit authority into durable state, tasks and receipts.](docs/assets/agent-operations-platform.svg)](https://agent-operations-demo.agentops-portfolio.workers.dev)
 
-## Explore the architecture
+<p align="center"><strong>Follow one operation from evidence to a durable result.</strong></p>
 
-**[Open the architecture showcase](https://agent-operations-demo.agentops-portfolio.workers.dev)**
+<p align="center">
+  <a href="https://agent-operations-demo.agentops-portfolio.workers.dev/#architecture">Explore the architecture →</a> ·
+  <a href="https://agent-operations-demo.agentops-portfolio.workers.dev/#operation">Follow one operation</a> ·
+  <a href="https://agent-operations-demo.agentops-portfolio.workers.dev/#evidence">Inspect implementation evidence</a>
+</p>
 
-Explore the responsibilities of the AI host, MCP/Web entry points, application
-services, logical controls and durable state. Select a component for its boundaries
-and source evidence, or step through an illustrated operation from evidence to
-readback. The homepage makes no model calls and starts no sandbox session.
+> **Project status:** Implemented TypeScript/Node.js platform with SQLite persistence,
+> MCP tools and authenticated Web routes. The public architecture showcase explains
+> the design; its optional Jobs sandbox uses a separate adapter, synthetic data and
+> a preset suggestion. Full-platform production acceptance is separate.
+
+## Product overview
+
+**The conversation ends. Who remembers what was approved and what actually changed?**
+
+The platform preserves the operational record: attributable evidence, proposed
+actions, admitted business state, derived tasks and execution receipts. The next
+interaction can read those facts and continue from a known result.
+
+| Responsibility | What it contributes |
+| --- | --- |
+| AI host | Interprets context, reasons over evidence and proposes a supported action |
+| Platform services and controls | Check identity, authority, domain rules and the current record version |
+| Durable workspace | Saves accepted state and receipts for later readback and supported retries |
+
+**Jobs** is the complete reference application; **Platform Watch** provides report
+storage and controlled decisions. Their domain-specific implementations make the
+platform's boundaries concrete. Personal operational records are excluded from
+this public edition.
 
 The optional [Jobs reference workflow](https://agent-operations-demo.agentops-portfolio.workers.dev/reference/jobs)
-demonstrates approval and persistence with synthetic data and a preset suggestion.
-Engineering details expand on demand. Platform Watch links to its implemented
-report-and-decision contract. See [the showcase guide](docs/examples/ONLINE_DEMO.md)
-for the distinction between the real platform and the isolated demo adapter.
+lets you try approval and persistence. Its engineering details expand on demand.
+See [the showcase guide](docs/examples/ONLINE_DEMO.md) for the distinction between
+the platform implementation, the illustrated architecture and the isolated sandbox.
 
 ## Engineering problem
 
