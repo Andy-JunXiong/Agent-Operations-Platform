@@ -1,0 +1,12 @@
+title = "PAW public repository secret scan"
+[extend]
+useDefault = true
+
+# Reviewed deterministic operation keys, not authentication credentials.
+# Restrict both paths and matching lines; never exempt all tests.
+[[allowlists]]
+description = "Synthetic operation idempotency keys"
+condition = "AND"
+paths = ['''tests[/\\]integration[/\\](mcp-transport|idempotency|workspace-service)\.test\.ts$''']
+regexTarget = "line"
+regexes = ['''^\s*idempotencyKey\s*[:=]\s*"(?:mcp-m3-(?:offer-admission|accepted-proposal|accepted-admission)|mcp-observation-1|admission-key-[12]|observation-1)",?\s*$''']

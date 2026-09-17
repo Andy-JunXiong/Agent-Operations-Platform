@@ -1,0 +1,1710 @@
+{
+  "originalBaseline": "74d8f88b218bcda73f3e0e1b7eb355d9dd02c677",
+  "comparison": "Text comparison normalizes CRLF/LF; original files were not deleted or changed.",
+  "files": [
+    {
+      "path": ".agents/skills/application-lifecycle-review/SKILL.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": ".agents/skills/application-lifecycle-review/references/mutation-procedure.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": ".agents/skills/job-search-today-review/SKILL.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": ".agents/skills/openai-platform-watch/SKILL.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": ".agents/skills/openai-platform-watch/references/run.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": ".agents/skills/release.json",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": ".agents/skills/targeted-verification/SKILL.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": ".dockerignore",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": ".env.example",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": ".gitattributes",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": ".gitignore",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": ".gitleaks.toml",
+      "treatment": "ADDED"
+    },
+    {
+      "path": ".node-version",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "AGENTS.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "Dockerfile",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "PROJECT_KICKOFF.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "README.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "data/.gitkeep",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/001_integration_spike.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/002_real_job_application_inventory.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/003_task_attention.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/004_web_identity_links.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/005_task_command_audit.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/006_job_candidates.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/007_candidate_links.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/008_recommendation_runs.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/009_mail_scan_runs.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/010_mail_scan_batches.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/011_mail_ingestion_identity.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/012_mail_scan_backend_ledger.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/013_mail_body_read_progress.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/014_job_mail_search.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/015_job_library.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/016_resume_editor.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/017_platform_watch_reports.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/018_resume_variants.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/019_candidate_match_assessments.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "db/migrations/020_candidate_screening.sql",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/backup.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/caddy/Caddyfile",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/cleanup-synthetic-20260907.mjs",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/compose.gmail.yaml",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/compose.web-writes.yaml",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/compose.web.yaml",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/compose.yaml",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/database-logical-fingerprint.mjs",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/deploy.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/health.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/import-database.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/install-tunnel-client.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/mail-batch-cloud-smoke.mjs",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/p6-cloud-smoke.mjs",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/p6-fixtures.mjs",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/p6-server-acceptance.mjs",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/paw.env.example",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/prepare-c3-source.ps1",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/rehearse-database-copy.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/restore.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/rollback.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/sample-web-capacity.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/systemd/paw-backup.service",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/systemd/paw-backup.timer",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/systemd/paw-tunnel-client.service",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/systemd/paw-web-ingress.service",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/systemd/paw-web-tunnel.service",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/tunnel-client.env.example",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/tunnel-health.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/verify-synthetic-completion.mjs",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/verify-synthetic-completion.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/web-binding-preflight.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/web-health.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/web-ingress-health.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/web-ingress.env.example",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "deploy/cloud/web-mode.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/web-route53-preflight.sh",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "deploy/cloud/web-tunnel-health.sh",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/web-tunnel.env.example",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "deploy/cloud/web-tunnel.yml.example",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/DEVELOPMENT_CONTINUITY_STANDARD.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/HISTORY.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/INDEX.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/PUBLIC_DATA_POLICY.md",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "docs/PUBLIC_FILE_MANIFEST.json",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "docs/PUBLIC_SANITISATION_REPORT.md",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "docs/REVIEW_FOLLOWUP.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/adr/ADR-001-conversation-not-system-of-record.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/adr/ADR-002-workspace-owns-state.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/adr/ADR-003-chatgpt-native-first.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/adr/ADR-004-mcp-integration-boundary.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/adr/ADR-005-state-mutations-require-evidence.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/adr/ADR-006-spike-runtime-and-persistence.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/adr/ADR-007-identity-auth-boundary.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/adr/ADR-008-transition-admission-idempotency.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/adr/ADR-009-cross-app-evidence-handoff.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/adr/ADR-010-real-application-inventory.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/adr/ADR-011-task-attention-today-view.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/adr/ADR-012-job-search-intelligence-boundary.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/architecture/APPLICATION_DOSSIER_WORKFLOW.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/APPLICATION_PREPARATION_CONTEXT.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/APPLICATION_RESUME_ASSOCIATIONS.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/ARCHITECTURE_REVIEW_v0.1.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/architecture/CANDIDATE_MATCH_GRADES.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/CORE_JOB_WORKFLOW.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/DOMAIN_SECONDARY_INTERFACES_PROPOSAL_v0.1.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/JOB_LIBRARY_WORKFLOW.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/JOB_SCREENING.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/JOB_SEARCH_INTELLIGENCE_ARCHITECTURE_v1.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/architecture/JOB_TRACKER_FLOW_REVIEW_2026-09-08.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/architecture/LOGICAL_ARCHITECTURE_v0.1.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/MAIL_SCAN_BACKEND_LEDGER.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/MAIL_SCAN_BACKEND_LEDGER_REQUIREMENTS_2026-09-08.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/architecture/PLATFORM_WATCH_REPORT_DECISIONS.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/RESUME_EDITOR.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/RESUME_VARIANTS.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/SANDBOX_AGENT_AUTHORITY_DESIGN.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/SKILL_LIBRARY.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/STATE_EVENT_FLOW_v0.1.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/architecture/STATE_MODEL_v0.1.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/architecture/SYSTEM_CONTEXT_v0.1.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "docs/architecture/WORKSPACE_SKILLS_LAYER_PROPOSAL.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/architecture/WORKSPACE_SKILLS_S0_S2_ASSESSMENT.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/cloud/C0_READINESS_REVIEW.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/cloud/C1_C2_PREFLIGHT_2026-09-05.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/cloud/C1_C2_RUNTIME_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/cloud/C1_RUNTIME_RUNBOOK.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/cloud/C2_SECURE_MCP_TUNNEL.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/cloud/C3_REAL_DATABASE_MIGRATION.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/cloud/C3_RUNTIME_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/cloud/C4_C5_ACCEPTANCE_RUNBOOK.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/cloud/C4_C5_RUNTIME_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/cloud/S1_WEB_OPERATIONS_RUNBOOK.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/cloud/S2_MIGRATION_REHEARSAL_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/dogfood/M4_DAILY_LOG_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/dogfood/M4_DAY0_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/dogfood/M4_DOGFOOD_PLAN_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/dogfood/M4_REAL_USE_EVALUATION_v0.2.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/dogfood/M4_REAL_USE_EVALUATION_v0.3.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/examples/SYNTHETIC_DEMO.md",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "docs/mvp/APPLICATION_CALENDAR_2026-09-09.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/APPLICATION_DETAIL_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/APPLICATION_PROFILE_EDIT_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/APPLICATION_PROGRESS_TIMELINE_2026-09-09.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/DAILY_WORKFLOW_ACCEPTANCE.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/GMAIL_BATCH_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/GMAIL_CHECK_RESULTS_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/GMAIL_DIRECT_API_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/GMAIL_MCP_READER_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/GMAIL_WORKSPACE_AGENT_SETUP.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/INTEGRATION_SPIKE_1B_PLAN_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/INTEGRATION_SPIKE_1B_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/INTEGRATION_SPIKE_PLAN_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/INTEGRATION_SPIKE_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/INTEGRATION_SPIKE_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/JOB_SEARCH_SECONDARY_INTERFACE_P0_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/JOB_SEARCH_SECONDARY_INTERFACE_REQUIREMENTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/JOB_TRACKER_PLATFORM_BLOCK_REPORT_2026-09-08.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/JOB_TRACKER_RECOVERY_2026-09-08.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/MAIL_CHECK_DIAGNOSTICS_2026-09-08.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/MAIL_INGESTION_ALIGNMENT_2026-09-08.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/MAIL_SCAN_RECEIPTS_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/MAIL_SCAN_RESUME_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/MAIL_STATUS_LAYOUT_2026-09-08.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/P6_ACCEPTANCE_PLAN_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/P6_PREPARATION_RESULTS_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/P6_RUNTIME_RESULTS_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/P6_SCENARIO_EXECUTION_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/PLATFORM_WATCH_REPORT_DECISION_P0_RESULTS_2026-09-10.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/PLATFORM_WATCH_SANDBOX_SPIKE_PLAN.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/PLATFORM_WATCH_SOURCE_REFRESH_2026-09-10.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/PLATFORM_WATCH_STORY_2026-09-10.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/REAL_JOB_SEARCH_M1_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/REAL_JOB_SEARCH_M2_PLAN_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/REAL_JOB_SEARCH_M2_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/REAL_JOB_SEARCH_M3_PLAN_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/REAL_JOB_SEARCH_M3_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/REAL_JOB_SEARCH_MVP_PLAN_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/RELEASE_HANDOFF_2026-09-08.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/REVIEW_HARDENING_2026-09-16.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_01_IDENTITY_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_02_QUERY_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_03_WEB_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_04_TASK_COMPLETION_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_05A1_GPT_WEB_LINK_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_05A_LOCAL_OPERATIONS_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_05B0_HTTPS_RELEASE_CHECK_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_05B1_EXTERNAL_BINDING_PREFLIGHT_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_05B2_AI_RADAR_DOMAIN_INGRESS_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_05B3_IPHONE_SAFARI_ACCEPTANCE_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_05B4_IPHONE_COMPLETION_PLAN_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_HANDOFF_2026-09-05.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_HANDOFF_2026-09-06.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S1_LOCAL_SCOPE_DECISION_2026-09-05.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S2_01_CANDIDATE_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S2_02_CANDIDATE_VIEWS_AND_LINKING_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/S2_03_DIGEST_RUN_RECORDING_RESULTS_v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/SESSION_CLOSE_2026-09-10.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/SYNTHETIC_CLEANUP_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/TODAY_AND_JOBS_2026-09-10.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/UPDATE_JOB_TRACKER_BACKEND_MANUAL_ACCEPTANCE.txt",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/UPDATE_JOB_TRACKER_HANDOFF_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/UPDATE_JOB_TRACKER_MANUAL_ACCEPTANCE.txt",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/UPDATE_JOB_TRACKER_WORKSPACE_PROMPT.txt",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/WEB_OVERVIEW_READABILITY_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/mvp/WEB_RESULTS_FOCUS_2026-09-07.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/strategy/OPENAI_PLATFORM_WATCH.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "docs/strategy/PRODUCT_SOLUTION_ROADMAP.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "experiments/platform-watch/README.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "experiments/platform-watch/pilot.mjs",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "experiments/platform-watch/pilot.test.mjs",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "fixtures/synthetic/lifecycle.json",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "fixtures/synthetic/watch-baseline/.agents/skills/openai-platform-watch/SKILL.md",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "fixtures/synthetic/watch-baseline/.agents/skills/openai-platform-watch/references/run.md",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "fixtures/synthetic/watch-baseline/AGENTS.md",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "fixtures/synthetic/watch-baseline/README.md",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "fixtures/synthetic/watch-baseline/docs/architecture/CORE_JOB_WORKFLOW.md",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "fixtures/synthetic/watch-baseline/docs/strategy/OPENAI_PLATFORM_WATCH.md",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "package-lock.json",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "package.json",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "scripts/backup-database.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/benchmark-job-search-queries.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/check-application-preparation.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/check-public.mjs",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "scripts/check-public.test.mjs",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "scripts/check-web-release.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/copy-web-assets.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/demo-synthetic.ts",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "scripts/import-job-library.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/import-resume-template.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/package-workspace-skills.mjs",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/resume-template.py",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "scripts/resume-word-pdf.ps1",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/run-workspace-skills-synthetic-acceptance.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/seed-p6-a04.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/seed-spike.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-candidate-assessments-migration.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-candidate-screening-migration.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-database.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-job-library-migration.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-job-mail-search-migration.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-mail-batch-migration.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-mail-body-read-migration.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-mail-ingestion-migration.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-mail-scan-ledger-migration.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-mail-scan-ledger-rollback.mjs",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-platform-watch-migration.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-resume-migration.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-resume-variants-migration.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/verify-s2-migration.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "scripts/web-identity-admin.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/candidate-assessment-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/candidate-job-description-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/candidate-screening-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/candidate-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/github-project-reader.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/job-discovery.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/job-fit-analyzer.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/job-library-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/job-mail-policy.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/job-posting-source.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/job-search-query-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/mail-batch-service.ts",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "src/application/mail-scan-ledger.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/mail-scan-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/manual-mail-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/platform-watch-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/read-pagination.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/request-context.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/resume-export.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/resume-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/screening-profile-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/skill-library-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/task-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/today-query-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/application/workspace-service.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/auth/identity-links.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/auth/job-library-router.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/auth/job-search-read-router.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/auth/job-search-write-router.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/auth/oidc.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/auth/resume-router.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/auth/session-store.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/auth/web-auth-app.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/auth/web-config.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/config.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/application-calendar.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/application-mail-event.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/application-profile.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/application-resume.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/candidate-match-assessment.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/candidate-screening.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/canonical-json.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/errors.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/gmail-check.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/job-application-lifecycle.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/job-fit.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/job-screening.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/mail-diagnostics.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/resume-document.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/skill-library.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/domain/types.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/gmail/checks.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/gmail/config.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/gmail/connections.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/gmail/job-mail-search.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/gmail/mcp-reader.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/gmail/message-body.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/gmail/providers.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/gmail/router.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/gmail/source-identity.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/mcp/create-server.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/mcp/http-app.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/mcp/web-links.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/operations/web-release-check.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/persistence/database.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/server.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/spike-fixture.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/assets/job-library.js",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/assets/resume.css",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/assets/resume.js",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/assets/workspace.css",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/assets/workspace.js",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/candidate-assessment-view.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/candidate-chatgpt-handoff.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/candidate-screening-view.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/job-library-views.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/page-router.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/report-markdown.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/resume-view.ts",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "src/web/skill-library-prompts.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/skill-library-view.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "src/web/views.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/evaluations/application-lifecycle-review-s2.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "tests/evaluations/chatgpt-m1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "tests/evaluations/chatgpt-m2.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "tests/evaluations/chatgpt-m3.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "tests/evaluations/chatgpt-platform-gate-v0.1.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "tests/evaluations/chatgpt-spike-1a.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "tests/evaluations/chatgpt-spike-1b.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "tests/evaluations/evidence/chatgpt-work-2026-09-08-paw-tool-schemas.json",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "tests/evaluations/job-search-today-review-s1.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "tests/evaluations/workspace-skills-chatgpt-web-smoke-2026-09-08.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "tests/evaluations/workspace-skills-deterministic-web-smoke-2026-09-08.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "tests/evaluations/workspace-skills-platform-acceptance-2026-09-08-chatgpt-work.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "tests/evaluations/workspace-skills-platform-acceptance-results-template.md",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/evaluations/workspace-skills-platform-acceptance-runbook.md",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "tests/evaluations/workspace-skills-synthetic-acceptance-2026-09-08.md",
+      "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "tests/helpers/candidate-assessment-fixture.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/helpers/candidate-screening-fixture.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/helpers/resume-fixture.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/helpers/skill-library-fixture.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/helpers/synthetic-oidc.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/helpers/test-workspace.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/helpers/test_resume_template.py",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/application-calendar.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/application-dossier.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/application-preparation-check.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/application-preparation-context.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/application-progress-timeline.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/application-resume.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/candidate-assessment-view.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/candidate-assessment.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/candidate-job-description.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/candidate-screening.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/database-backup.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/database-logical-fingerprint.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/gmail-api.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/gmail-config.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/gmail-mcp.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/gmail-message-body.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/gmail-observation-privacy.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/idempotency.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/job-application-lookup.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/job-candidate.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/job-library.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/job-mail-search.test.ts",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "tests/integration/job-search-queries.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/mail-batch-migration-verification.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/mail-batch.test.ts",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "tests/integration/mail-ingestion-migration.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/mail-ingestion.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/mail-scan-ledger.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/mail-scan.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/mcp-transport.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/p6-fixtures.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/platform-watch-report.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/real-job-application-inventory.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/real-lifecycle-m3.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/recommendation-run.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/resume-editor.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/resume-export.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/resume-variants.test.ts",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "tests/integration/s2-migration-verification.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/screening-profile.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/seed-p6-a04.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/skill-library.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/synthetic-completion-verification.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/task-migration.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/task-service.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/today-query-service.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/today-updates.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/web-auth-transport.test.ts",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "tests/integration/web-identity.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/web-startup.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/workspace-service.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/integration/workspace-skills-synthetic-acceptance.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/manual/candidate-assessment-preview.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/manual/candidate-screening-preview.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/manual/web-preview.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/application-lifecycle-review-skill.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/cloud-web-deployment.test.ts",
+      "treatment": "MODIFIED"
+    },
+    {
+      "path": "tests/unit/config.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/jd-web-retry.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/job-application-lifecycle.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/job-screening.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/job-search-today-review-skill.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/report-markdown.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/web-config.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/web-links.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/web-release-check.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tests/unit/workspace-skills-packaging.test.ts",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tsconfig.browser.json",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tsconfig.build.json",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "tsconfig.json",
+      "treatment": "UNCHANGED"
+    },
+    {
+      "path": "vitest.config.ts",
+      "treatment": "UNCHANGED"
+    }
+  ]
+}

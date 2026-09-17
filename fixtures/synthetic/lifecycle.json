@@ -1,0 +1,11 @@
+{
+  "synthetic": true,
+  "projectId": "10000000-0000-4000-8000-000000000001",
+  "initialTransitionId": "10000000-0000-4000-8000-000000000002",
+  "company": "ExampleCorp",
+  "role": "Software Engineer",
+  "title": "ExampleCorp - Software Engineer",
+  "observedAt": "2025-01-15T09:00:00.000Z",
+  "messageId": "synthetic-message-001",
+  "messageUrl": "https://example.test/messages/001"
+}

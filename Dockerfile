@@ -1,0 +1,48 @@
+FROM node:24-bookworm-slim AS build
+
+WORKDIR /opt/paw
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends python3 make g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY tsconfig.json tsconfig.build.json ./
+COPY src ./src
+COPY scripts ./scripts
+COPY db ./db
+RUN npm run build && npm prune --omit=dev
+
+FROM node:24-bookworm-slim
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends python3 libreoffice-writer fonts-liberation \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV PAW_DB_PATH=/app/data/workspace.db
+
+# Keep application code separate from the persistent /app/data mount so the
+# existing database path boundary remains enforced inside the container.
+WORKDIR /opt/paw
+
+COPY package.json package-lock.json ./
+COPY --from=build /opt/paw/node_modules ./node_modules
+COPY --from=build /opt/paw/dist ./dist
+COPY db ./db
+
+RUN mkdir -p /app/data /app/backups \
+    && chown -R node:node /app/data /app/backups
+
+VOLUME ["/app/data"]
+EXPOSE 3000 3001
+
+USER node
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD ["node", "-e", "fetch('http://127.0.0.1:3000/healthz').then((response) => { if (!response.ok) process.exit(1); }).catch(() => process.exit(1));"]
+
+CMD ["node", "dist/src/server.js"]
