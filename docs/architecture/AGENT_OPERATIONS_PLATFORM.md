@@ -74,7 +74,7 @@ The repository contains Gmail integration, bounded GitHub source reading, Drive-
 
 ## Naming and compatibility
 
-Personal AI Workspace and PAW are historical names. Existing `PAW_*` settings, `workspace_*` tool names, package/server identifier `personal-ai-workspace`, database defaults, API paths and release metadata remain compatibility identifiers. The persisted Workspace entity still describes a real domain object; it should not be renamed merely to match the product title.
+Agent Ops is the compact interface label for Agent Operations Platform. Personal AI Workspace and PAW are historical names. Existing `PAW_*` settings, `workspace_*` tool names, package/server identifier `personal-ai-workspace`, database defaults, API paths and release metadata remain compatibility identifiers. The persisted Workspace entity still describes a real domain object; it should not be renamed merely to match the product title.
 
 An installed ChatGPT connector may still be displayed as Personal AI Workspace. Handoff text mentions that alias so rebranding does not prevent users selecting the existing connection. Future hosts are architectural direction, while host-specific instructions describe the currently implemented user flow.
 

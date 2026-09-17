@@ -137,7 +137,7 @@ describe("Workspace Skills release packaging", () => {
 
     expect(firstManifest).toEqual(secondManifest);
     expect(firstManifest.sourceCommit).toBe(sourceCommit);
-    expect(firstManifest.releaseVersion).toBe("0.1.0");
+    expect(firstManifest.releaseVersion).toBe("0.1.1");
     expect(firstManifest.releaseConfigSha256).toBe(
       sha256(readFileSync(releaseConfigPath)),
     );
