@@ -28,6 +28,10 @@ flowchart LR
 
 This is a conceptual map of existing code, not a new folder hierarchy. Control checks occur at identity, service, domain and persistence boundaries; there is no single kernel process through which every call passes. Domain services live inside the platform. External systems retain authority over their original records.
 
+Jobs exposes MCP and Web entry points. Platform Watch report import and decision
+commands use authenticated Web routes; this diagram does not imply that Watch has
+the same MCP tool surface as Jobs.
+
 | Boundary | Implementation | Responsibility |
 | --- | --- | --- |
 | MCP | `src/mcp/` | Tool schemas, invocation and service access |

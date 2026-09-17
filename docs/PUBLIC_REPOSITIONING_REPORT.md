@@ -31,4 +31,75 @@ Implementation plan: rewrite the README around Agent Operations Platform; docume
 
 ## Verification and final status
 
-Pending implementation verification. The final update will record actual checks, changes, file counts and status. This interim record does not declare either repository safe to publish.
+All 329 publishable files were checked for private artifacts, prohibited personal
+patterns and secrets. The new public history was scanned separately. No new
+personal-data or credential findings were identified. The original audit findings
+remain unresolved in the original public repository; this work did not amend it.
+
+| Check | Result and scope |
+| --- | --- |
+| Server and browser TypeScript checks | PASS in the full verification run |
+| Automated application tests | Full run: 520 passed and 2 stale branding/version expectations failed. Those expectations were corrected; all 57 tests in the three affected files then passed. Together these results cover all 522 tests in 64 files; none were skipped. |
+| Production build | PASS after the final interface-copy correction |
+| `npm run check:public` | PASS: publishable-file guard plus Gitleaks 8.30.1 |
+| `npm run test:public` | PASS: both adversarial guard tests |
+| Synthetic lifecycle demo | PASS: authority, no-write retry, concurrency, derived task and persistence assertions |
+| Offline Watch pilot | PASS: all 5 integrity tests with public snapshot `public-synthetic-v2` |
+| Skill packaging | PASS: both version 0.1.1 archives with unchanged tool compatibility set |
+| Browser inspection | PASS: Today and Platform Watch at 1440px and 390px; no horizontal overflow, full product page titles and compact Agent Ops branding |
+| Documentation and Skill review | Local links, frontmatter, historical-name classification and actual code/test mappings checked |
+| Diff whitespace | PASS with CRLF-aware Git whitespace checking |
+
+The initial `npm run verify` invocation stopped at the two test expectations above;
+it is not reported as a single uninterrupted pass. Corrected files were rechecked
+and the build was run separately. Broader tests were not repeated after narrow
+copy/assertion corrections because the unchanged components already had passing
+evidence. No production, hosted-agent, remote-CI or external-account acceptance is
+claimed. Browser checks used synthetic local data only; screenshots remain outside
+the public tree.
+
+Version 0.1.1 packages were written to a separate local output directory because
+the packager correctly refused to overwrite older 0.1.0 archives. Canonical Skill
+sources remain pinned to their reviewed commit. The application package name,
+application version, MCP tool names and authority rules were not changed.
+
+## Delivered changes
+
+- README: platform thesis, logical Trust Kernel, implementation evidence, applications,
+  host/integration support matrix, synthetic demo, limitations and compatibility.
+- New architecture guide: control-to-code/test mapping, Jobs versus Watch entry points,
+  explicit capability limits, future gates and carefully scoped AgentGov relationship.
+- Interface wording: product title, short brand label, Watch copy and MCP availability
+  description. ChatGPT handoffs retain the old connection-name alias.
+- Active Skill descriptions: new product terminology. Watch now requires an explicitly
+  selected showcase repository or a labeled reviewed local snapshot.
+- Historical ADRs/proposals: original content retained and identified as historical
+  naming. The index separates active contracts, historical evidence and proposals.
+- Public-data gates and CI remain in place. Watch snapshots and hashes were refreshed;
+  the public source manifest and downloadable archive were updated.
+
+No files were removed in this positioning pass and no new real examples were used.
+The existing wholly synthetic lifecycle scenario remains the executable demo. The
+[file manifest](PUBLIC_FILE_MANIFEST.json) lists the original-to-public treatments
+and the paths changed in this positioning pass. Original source, migration and
+automatic-test coverage remain present; edits to application files are display
+text and handoff product names, not control flow or authority semantics.
+
+## Residual risks and next steps
+
+Publish only this clean edition. The original repository still needs a separate
+visibility/history/PR/artifact remediation decision; making a new repository does
+not retract existing copies. No actual credential was found by this audit, but
+any actual exposed credential subsequently identified must be rotated regardless
+of history deletion. Pattern scanning cannot guarantee semantic privacy.
+
+Product positioning is ready within the stated capability limits. Configure and
+verify any future host, enterprise connector or delegated-agent model before
+claiming support. AgentGov needs its own implementation review before any code
+reuse or lineage claim. No remote publication or deployment occurred in this pass.
+
+| Status | Decision |
+| --- | --- |
+| PUBLIC POSITIONING | **READY** |
+| CURRENT HEAD PRIVACY | **SAFE TO KEEP PUBLIC** for the clean edition within the documented local scan and review scope; not a verdict on the original repository |
+| GIT HISTORY | **CLEAN PUBLIC SHOWCASE REPO RECOMMENDED** for the original repository. This clean edition's separate history passed its secret scan. |
