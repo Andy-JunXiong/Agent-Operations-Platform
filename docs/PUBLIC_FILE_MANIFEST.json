@@ -159,6 +159,54 @@
       "treatment": "UNCHANGED"
     },
     {
+      "path": "demo/build.mjs",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/package-lock.json",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/package.json",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/src/worker.ts",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/test/retention.test.mjs",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/test/workflow.test.mjs",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/tsconfig.json",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/web/app.js",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/web/index.html",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/web/style.css",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/worker-configuration.d.ts",
+      "treatment": "ADDED"
+    },
+    {
+      "path": "demo/wrangler.jsonc",
+      "treatment": "ADDED"
+    },
+    {
       "path": "deploy/cloud/backup.sh",
       "treatment": "UNCHANGED"
     },
@@ -565,6 +613,10 @@
     {
       "path": "docs/dogfood/M4_REAL_USE_EVALUATION_v0.3.md",
       "treatment": "EXCLUDED_FROM_PUBLIC_EDITION"
+    },
+    {
+      "path": "docs/examples/ONLINE_DEMO.md",
+      "treatment": "ADDED"
     },
     {
       "path": "docs/examples/SYNTHETIC_DEMO.md",
@@ -1773,5 +1825,25 @@
     "tests/integration/platform-watch-report.test.ts",
     "tests/integration/web-auth-transport.test.ts",
     "tests/unit/workspace-skills-packaging.test.ts"
+  ],
+  "interactiveDemoChanges": [
+    ".github/workflows/verify.yml",
+    ".gitignore",
+    "README.md",
+    "docs/INDEX.md",
+    "docs/PUBLIC_FILE_MANIFEST.json",
+    "demo/build.mjs",
+    "demo/package-lock.json",
+    "demo/package.json",
+    "demo/src/worker.ts",
+    "demo/test/retention.test.mjs",
+    "demo/test/workflow.test.mjs",
+    "demo/tsconfig.json",
+    "demo/web/app.js",
+    "demo/web/index.html",
+    "demo/web/style.css",
+    "demo/worker-configuration.d.ts",
+    "demo/wrangler.jsonc",
+    "docs/examples/ONLINE_DEMO.md"
   ]
 }

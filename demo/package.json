@@ -1,0 +1,20 @@
+{
+  "name": "agent-operations-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "npm run build && wrangler dev dist/worker.js --port 8787",
+    "types": "wrangler types --include-runtime false",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "deploy": "npm run build && wrangler deploy dist/worker.js"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20260917.1",
+    "esbuild": "0.28.2",
+    "miniflare": "5.20260916.0-alpha",
+    "typescript": "~7.0.2",
+    "wrangler": "4.133.0"
+  }
+}

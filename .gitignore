@@ -34,3 +34,8 @@ exports/
 local-evidence/
 production-copy/
 screenshots/
+
+# Local Cloudflare development state.
+.wrangler/
+.dev.vars
+.dev.vars.*

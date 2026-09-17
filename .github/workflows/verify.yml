@@ -58,6 +58,12 @@ jobs:
       - name: Run repository verification
         run: npm run verify
 
+      - name: Verify interactive demo
+        run: |
+          npm ci --prefix demo
+          npm --prefix demo run typecheck
+          npm --prefix demo test
+
       - name: Verify offline Platform Watch pilot materials
         run: node --test experiments/platform-watch/pilot.test.mjs
 

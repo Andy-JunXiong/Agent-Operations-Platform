@@ -8,6 +8,17 @@ Agents reason. The platform governs durable state changes and execution admissio
 
 The platform supplies operational controls behind AI agents. **Jobs** is the complete reference application; **Platform Watch** provides report storage and controlled decisions. Both make the design concrete. This public edition contains synthetic examples and the implementation, with personal operational records excluded.
 
+## Try it in your browser
+
+**[Open the interactive demo](https://agent-operations-demo.agentops-portfolio.workers.dev)** ? no login or setup.
+
+Record synthetic evidence, create a proposal, explicitly approve the transition,
+then test a missing-approval request, an exact retry and a stale write. Refresh
+to verify server persistence. The demo shares the actual lifecycle/task rules
+and uses an isolated Cloudflare adapter with per-visitor temporary storage.
+Suggestions are preset; no model or external business action runs.
+See [the demo architecture and walkthrough](docs/examples/ONLINE_DEMO.md).
+
 ## Engineering problem
 
 An assistant can interpret a message and propose an action. Durable business operations also need stable identity, controlled tool access, explicit authority, predictable retries and recovery across conversations. The Jobs lifecycle separates **Observation → Proposal → Admission**, so evidence and model confidence cannot silently become permission to mutate business state. Connected providers retain their original records; the platform owns its admitted application state.
@@ -81,6 +92,7 @@ The deterministic result is `RECRUITER_CONTACT`, lifecycle version `2`, and one 
 | `src/mcp/`, `src/auth/`, `src/web/` | MCP, identity and web boundaries |
 | `db/migrations/` | Complete ordered schema evolution |
 | `tests/` | Unit, integration and synthetic acceptance checks |
+| `demo/` | Independent interactive portfolio sandbox and server integration tests |
 | `fixtures/synthetic/` | Public demo inputs and reviewed Watch snapshots |
 | `deploy/cloud/` | Parameterized deployment, backup and recovery tooling |
 | `docs/adr/`, `docs/architecture/` | Decisions, technical contracts and labeled proposals |
