@@ -17,6 +17,8 @@ import { verifiedRequestContext, type RequestContext } from "./request-context.j
 import { JobSearchQueryService } from "./job-search-query-service.js";
 import { CandidateService } from "./candidate-service.js";
 import { CandidateAssessmentService } from "./candidate-assessment-service.js";
+import { InterviewPreparationService } from "./interview-preparation-service.js";
+import { INTERVIEW_CONTRACT, INTERVIEW_PROVIDER } from "../domain/interview-preparation.js";
 import { ResumeService } from "./resume-service.js";
 import { JobLibraryService } from "./job-library-service.js";
 import { MailScanService } from "./mail-scan-service.js";
@@ -322,6 +324,7 @@ export class WorkspaceService {
   readonly jobSearchQueryService: JobSearchQueryService;
   readonly candidateService: CandidateService;
   readonly candidateAssessmentService: CandidateAssessmentService;
+  readonly interviewPreparationService: InterviewPreparationService;
   readonly candidateScreeningService: CandidateScreeningService;
   readonly screeningProfileService: ScreeningProfileService;
   readonly skillLibraryService: SkillLibraryService;
@@ -351,6 +354,8 @@ export class WorkspaceService {
     this.jobSearchQueryService = new JobSearchQueryService(database, resolveIdentity, options.clock);
     this.candidateAssessmentService = new CandidateAssessmentService(database, resolveTaskContext,
       this.jobSearchQueryService, this.jobLibraryService, this.resumeService, options.clock);
+    this.interviewPreparationService = new InterviewPreparationService(database, resolveTaskContext,
+      (id, readOptions) => this.getProject(id, readOptions), this.jobLibraryService, options.clock);
     this.candidateScreeningService = new CandidateScreeningService(database, resolveTaskContext,
       this.jobSearchQueryService, this.candidateAssessmentService, options.clock);
     this.screeningProfileService = new ScreeningProfileService(database, resolveTaskContext, this.jobLibraryService, options.clock);
@@ -2063,6 +2068,9 @@ function normalizeRecordObservationInput(
   input: RecordObservationInput,
 ): RecordObservationInput {
   const provider = input.provider.trim();
+  if (provider.toLowerCase() === INTERVIEW_PROVIDER || input.observedFacts.contractVersion === INTERVIEW_CONTRACT) {
+    throw new ValidationError("Use workspace_record_interview_preparation for versioned interview results");
+  }
   if (provider.toLowerCase() === "google-drive-resume" ||
       input.observedFacts.contractVersion === "job-application-resume-v0.1") {
     const parsed = applicationResumeSchema.safeParse(input.observedFacts);

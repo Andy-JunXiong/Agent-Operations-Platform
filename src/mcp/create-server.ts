@@ -3,6 +3,7 @@ import { recordScreeningProfileSchema } from "../application/screening-profile-s
 import { recordSkillLibrarySchema, recordSkillSourceSchema, githubRefreshSchema } from "../domain/skill-library.js";
 import { recordCandidateJobDescriptionSchema } from "../application/candidate-job-description-service.js";
 import { candidateAssessmentReadSchema, recordCandidateAssessmentSchema } from "../domain/candidate-match-assessment.js";
+import { interviewReadSchema, recordInterviewSchema } from "../domain/interview-preparation.js";
 import { recordScreeningSchema, overrideScreeningSchema, screeningReadSchema } from "../domain/candidate-screening.js";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import * as z from "zod/v4";
@@ -116,6 +117,26 @@ export function createWorkspaceMcpServer(
       }
     },
   );
+
+  server.registerTool("workspace_get_interview_preparation", {
+    title: "Read interview preparation and source context",
+    description: "Read one exact Job Application's latest or numbered interview preparation, immutable source snapshot and paginated correction history. includeContext=true returns current JD, application-linked working resume options/content, selected project sources, confirmed user sources and skill-library evidence, explicit omissions and inputHash. Select an exact resumeVariantId when multiple options exist; sourceIds adds up to 30 exact library IDs (discover them through workspace_get_skill_library). Missing materials permit qualified general preparation, never invented experience. Saved inputs remain distinct from current context and a working resume never proves submission.",
+    inputSchema: interviewReadSchema.shape, outputSchema: resultOutputSchema,
+    annotations: { readOnlyHint: true, destructiveHint: false, openWorldHint: false },
+  }, async input => {
+    try { return successResult(workspaceService.interviewPreparationService.read(input)); }
+    catch (error) { return errorResult(error); }
+  });
+
+  server.registerTool("workspace_record_interview_preparation", {
+    title: "Save a versioned interview preparation",
+    description: "Save only after an explicit interactive user request to prepare/save or correct this application's interview preparation. First read workspace_get_interview_preparation with includeContext=true; echo its inputHash, latestVersion/latestId and chosen resume/source IDs. Questions use exact JD quotes or null for general questions; experience citations must quote selected WORKING_RESUME (sourceId=null) or LIBRARY_SOURCE text exactly. EVIDENCED/PARTIAL need citations; UNKNOWN has no citations and must explain missing evidence, not claim absent ability. All answerOutline text is advice, not established fact. Preserve prior user corrections when revising; correction records the actual user statement/reference and requires a previous preparation. Saves immutable inputs and attribution atomically, rejects stale inputs/versions and replays identical requests. Does not change application state, Tasks, library facts or submitted resume confirmations. Never use generic observations for this contract.",
+    inputSchema: recordInterviewSchema.shape, outputSchema: resultOutputSchema,
+    annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: false },
+  }, async input => {
+    try { return successResult(workspaceService.interviewPreparationService.record(input)); }
+    catch (error) { return errorResult(error); }
+  });
 
   server.registerTool(
     "workspace_get_task",

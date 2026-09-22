@@ -6,6 +6,41 @@ and PAW identify earlier project stages and retained compatibility identifiers. 
 
 This public overview preserves engineering milestones without a personal operational diary.
 
+## September 22 interview preparation
+
+### Continuity and benefits
+
+The existing dossier/working-resume context needs a durable preparation result so
+later conversations can inspect the same source basis and retain user corrections.
+This milestone adds dedicated MCP admission and application-page readback for
+cited questions, advisory outlines and numbered source snapshots. It makes stale
+commands, unsupported quotations and retry behavior directly testable, and enables
+subsequent account-specific correction/readback acceptance. Better preparation
+quality and cross-host usefulness remain outcomes to assess, not consequences
+proved by a successful save.
+
+The [active contract](architecture/INTERVIEW_PREPARATION.md) maps the domain schema,
+transactional service, Web display and ten synthetic cases. Existing Resources
+and idempotency storage are reused without a migration. Source evidence and
+advice remain distinct from lifecycle authority, Tasks, experience facts and
+actual-submission confirmation. The tool set grows from 40 to 42, with existing
+MCP transport and optional-mail discovery expectations updated accordingly.
+
+The public edition receives only reviewed generic changes and fabricated fixtures.
+It retains its own history, branding and public-data policy. No private
+preparation, operational transcript, account binding or deployment artifact is
+published. The optional Worker is unchanged; Pages retains the existing Verify
+gate. This milestone does not claim a live public interview-preparation service.
+
+Local verification passed 42 tests across eight affected suites: preparation,
+source context, MCP transport, optional-mail discovery, fixture counts, workspace
+service, idempotency and Web identity. Both TypeScript configurations, build,
+three public-guard tests and the pinned Gitleaks scan over 355 publishable files
+passed. The final public-branding adjustment also passed the focused escaped-render
+case and build. Diff/reference review covers the documentation closeout. Broader
+local suites were omitted because the affected contracts have passing evidence;
+existing full Verify CI remains required on main.
+
 ## September 17 mail discovery follow-up
 
 ### Continuity and benefits

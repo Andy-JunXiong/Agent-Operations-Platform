@@ -54,12 +54,19 @@ the same MCP tool surface as Jobs.
 | Optimistic concurrency | [Workspace service tests](../../tests/integration/workspace-service.test.ts), [candidate assessment tests](../../tests/integration/candidate-assessment.test.ts) | Version checks protect specific records and commands, not distributed cross-provider transactions. |
 | Audit and receipts | [Mail ledger](../../src/application/mail-scan-ledger.ts), [ledger tests](../../tests/integration/mail-scan-ledger.test.ts), [Watch tests](../../tests/integration/platform-watch-report.test.ts) | Persisted domain/run records are not an immutable external security log or proof that a hosted scheduler fired. |
 | Failure recovery | [Persistence](../../src/persistence/database.ts), [backup tests](../../tests/integration/database-backup.test.ts), [synthetic demo](../examples/SYNTHETIC_DEMO.md) | Demonstrates local persistence, supported resumption and copy recovery, not a general distributed workflow runtime. |
+| Retained preparation evidence | [Interview service](../../src/application/interview-preparation-service.ts), [synthetic tests](../../tests/integration/interview-preparation.test.ts) | Saved source snapshots and quote/version checks do not independently validate personal contribution or answer quality. |
 
 Least privilege and fail-closed behavior are implemented through command-specific gates, input checks and bounded provider access. Their coverage must be evaluated per route and deployment configuration. Model confidence, a source instruction and an advisory recommendation do not grant mutation authority.
 
 ## Applications and integrations
 
 **Jobs** is the most complete reference application: candidate intake, evidence-backed application lifecycle, derived tasks, preparation material, screening and versioned assessments. The [core workflow](CORE_JOB_WORKFLOW.md) and [synthetic walkthrough](../examples/SYNTHETIC_DEMO.md) expose concrete contracts.
+
+The [interview-preparation contract](INTERVIEW_PREPARATION.md) adds dedicated MCP
+read/save, exact source snapshots, advisory outlines and correction history.
+Authenticated application pages render those records; preparation admission does
+not grant lifecycle or shared-library mutation authority. The public reference
+sandbox remains a separate lifecycle demonstration.
 
 **Platform Watch** stores source-grounded reports and explicit user decisions. Its [report contract](PLATFORM_WATCH_REPORT_DECISIONS.md) and [offline evaluation kit](../../experiments/platform-watch/README.md) do not imply a shipped autonomous research runner. Jobs lifecycle admission and Watch report decisions use domain-specific commands; the domains are not interchangeable plugins.
 

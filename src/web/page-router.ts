@@ -64,7 +64,7 @@ export function createJobSearchPageRouter(serviceFor: (request: Request) => Work
   page("/applications", (service, request) => applicationListView(service,
     query(request, ["q", "status", "lifecycle", "sort", "cursor", "pageSize"]), timeZone, Boolean(gmailFor)));
   page("/applications/:id", (service, request) => {
-    const input = query(request, ["section", "status", "cursor", "pageSize"]);
+    const input = query(request, ["section", "status", "cursor", "pageSize", "preparationVersion", "preparationBeforeVersion"]);
     if (input.section !== undefined && !["timeline", "tasks", "resources", "history"].includes(String(input.section))) {
       throw new ValidationError("Invalid section");
     }

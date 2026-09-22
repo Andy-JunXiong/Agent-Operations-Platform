@@ -85,6 +85,7 @@ A lifecycle workflow reads attributable evidence, records an observation, propos
 | Deterministic transitions and derived tasks | [Lifecycle rules](src/domain/job-application-lifecycle.ts), [task tests](tests/integration/task-service.test.ts) |
 | Durable state, backup and recovery | [Persistence](src/persistence/database.ts), [backup tests](tests/integration/database-backup.test.ts) |
 | Source evidence is minimized and does not grant authority | [Mail privacy tests](tests/integration/gmail-observation-privacy.test.ts), [Skills design](docs/architecture/WORKSPACE_SKILLS_LAYER_PROPOSAL.md) |
+| Preparation retains exact sources and versioned corrections | [Interview contract](docs/architecture/INTERVIEW_PREPARATION.md), [synthetic tests](tests/integration/interview-preparation.test.ts) |
 
 Guarantees apply to the implemented commands. Platform write idempotency is not an exactly-once guarantee for external tools, and local recovery does not prove distributed workflow recovery. The [Trust Kernel evidence map](docs/architecture/AGENT_OPERATIONS_PLATFORM.md#trust-kernel-mechanisms-evidence-and-limits) links each control to code, tests and its limits.
 
@@ -140,7 +141,18 @@ npm run dev
 
 `/healthz` checks liveness; `/mcp` exposes the local MCP interface. Web access and general web writes are disabled by default. Development identity is for isolated local use; configure the deployment identity and transport boundary before exposing a service.
 
-## Latest portfolio milestone ? 2026-09-17
+## Latest source milestone — 2026-09-22
+
+[Interview preparation](docs/architecture/INTERVIEW_PREPARATION.md) now preserves
+cited questions, advisory outlines, exact source snapshots and correction history
+through dedicated MCP read/save tools and the application page. Stale writes and
+unsupported quotations are rejected; the source snapshot keeps working resumes
+separate from actual-submission confirmations. See
+[the synthetic evidence and limits](docs/HISTORY.md#september-22-interview-preparation).
+This is a source milestone; the optional public sandbox remains a separate,
+synthetic lifecycle demonstration.
+
+## Portfolio publication — 2026-09-17
 
 The architecture showcase is published on GitHub Pages with share metadata and a
 reviewed social cover. [Publication and verification evidence](docs/examples/ONLINE_DEMO.md#september-17-online-publication-acceptance)

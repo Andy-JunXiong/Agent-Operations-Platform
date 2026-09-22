@@ -24,6 +24,7 @@ Observation, proposal and admission remain separate. Authority to create an appl
 - [State model](STATE_MODEL_v0.1.md) and [event flow](STATE_EVENT_FLOW_v0.1.md).
 - [Mail scan receipts](MAIL_SCAN_BACKEND_LEDGER.md): backend progress is distinct from model interpretation and mutation authority.
 - [Application dossier](APPLICATION_DOSSIER_WORKFLOW.md), [preparation context](APPLICATION_PREPARATION_CONTEXT.md) and [resume associations](APPLICATION_RESUME_ASSOCIATIONS.md).
+- [Interview preparation](INTERVIEW_PREPARATION.md): cited results, source snapshots and appended corrections; saving advice does not mutate lifecycle, Tasks or shared experience facts.
 - [Screening](JOB_SCREENING.md), [match grades](CANDIDATE_MATCH_GRADES.md) and [skill library](SKILL_LIBRARY.md).
 - [Resume editor](RESUME_EDITOR.md) and [per-job variants](RESUME_VARIANTS.md).
 

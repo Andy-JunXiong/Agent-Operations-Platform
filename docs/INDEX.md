@@ -7,6 +7,7 @@ Start with the [product overview](../README.md), [architecture and Trust Kernel 
 - [Agent Operations Platform: architecture and capability boundaries](architecture/AGENT_OPERATIONS_PLATFORM.md)
 - [Application dossier workflow](architecture/APPLICATION_DOSSIER_WORKFLOW.md)
 - [Single-application preparation context](architecture/APPLICATION_PREPARATION_CONTEXT.md)
+- [Evidence-backed interview preparation](architecture/INTERVIEW_PREPARATION.md): implemented MCP admission, source snapshots, revisions and application-page rendering; synthetic evidence and real-use boundaries.
 - [Application resume associations](architecture/APPLICATION_RESUME_ASSOCIATIONS.md)
 - [候选职位 JD 匹配评级：保存与读取契约](architecture/CANDIDATE_MATCH_GRADES.md)
 - [Core job workflow](architecture/CORE_JOB_WORKFLOW.md)
@@ -47,7 +48,7 @@ Start with the [product overview](../README.md), [architecture and Trust Kernel 
 - [State / Event Flow v0.1](architecture/STATE_EVENT_FLOW_v0.1.md)
 - [State Model v0.1](architecture/STATE_MODEL_v0.1.md)
 - [System Context v0.1](architecture/SYSTEM_CONTEXT_v0.1.md)
-- [Engineering evolution](HISTORY.md): September 17 portfolio publication and bounded mail-discovery follow-up; source verification is separate from live acceptance.
+- [Engineering evolution](HISTORY.md): September 22 interview preparation, September 17 portfolio publication and bounded mail-discovery follow-up; source verification is separate from live acceptance.
 - [Public positioning and portfolio-hardening report](PUBLIC_REPOSITIONING_REPORT.md)
 - [Public repository sanitisation report](PUBLIC_SANITISATION_REPORT.md)
 

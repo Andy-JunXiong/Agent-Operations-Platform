@@ -3,6 +3,10 @@
 Public technical excerpt. Personal operations and deployment ledgers are excluded.
 These contracts describe the code; they do not assert hosted-client or production acceptance.
 
+The [interview-preparation successor](INTERVIEW_PREPARATION.md) reuses this read
+context to admit cited results, retain source snapshots and preserve correction
+history. It keeps working copies and actual-submission evidence separate.
+
 ## Read contract
 
 `workspace_get_project` accepts:

@@ -3,6 +3,7 @@ import { fitPanel, discoveryPanel } from "./job-library-views.js";
 import { assessmentListSummary, assessmentPageOptions, candidateAssessmentPanel } from "./candidate-assessment-view.js";
 import type { WorkspaceService } from "../application/workspace-service.js";
 import { applicationProfileSchema } from "../domain/application-profile.js";
+import { interviewPreparationPanel } from "./interview-preparation-view.js";
 import { applicationResumeSchema, isResumeFileUrl, type ApplicationResume } from "../domain/application-resume.js";
 import type { ReadPage } from "../application/read-pagination.js";
 import type { ApplicationListItem } from "../application/job-search-query-service.js";
@@ -252,7 +253,7 @@ export function applicationView(service: WorkspaceService, id: string, query: Re
     { title: "岗位要求与技能对照", ready: !!match?.matches.length, status: match?.matches.length ? "已保存对照表" : "待逐项对照", href: "#application-skills" },
   ];
   const materialsPanel = `<section class="panel"><header class="section-heading"><h2>申请资料清单</h2><span class="muted">${materials.filter(m => m.ready).length} / 4 已齐备</span></header><p class="section-intro">每次申请后保存职位链接、JD、实际投递简历版本和逐项技能对照，方便以后回看与准备面试。</p>${materials.map(m => `<a class="gap-row" href="${e(m.href)}"${m.href.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : ""}><strong>${e(m.title)}</strong><span>${e(m.status)} ↗</span></a>`).join("")}</section>`;
-  const resumePanel = `<section id="application-resume" class="panel application-profile"><h2>申请简历</h2>${resumes.map(r => resumeAssociation(r.facts, r.externalUri, zone)).join("")}${data?.resumeVersion ? `<p><strong>原有简历记录：${e(data.resumeVersion)}</strong></p><p class="muted">原记录未区分文件与实际投递版本的确认依据。</p>` : resumes.length ? "" : "<p>尚未关联简历版本。</p>"}${data?.resumeText ? `<div class="saved-text">${e(data.resumeText)}</div>` : ""}${data?.sourceReference ? `<p class="saved-text muted">资料来源：${e(data.sourceReference)}</p>` : ""}
+  const resumePanel = `${interviewPreparationPanel(service, id, { preparationVersion: query.preparationVersion, preparationBeforeVersion: query.preparationBeforeVersion }, zone)}<section id="application-resume" class="panel application-profile"><h2>申请简历</h2>${resumes.map(r => resumeAssociation(r.facts, r.externalUri, zone)).join("")}${data?.resumeVersion ? `<p><strong>原有简历记录：${e(data.resumeVersion)}</strong></p><p class="muted">原记录未区分文件与实际投递版本的确认依据。</p>` : resumes.length ? "" : "<p>尚未关联简历版本。</p>"}${data?.resumeText ? `<div class="saved-text">${e(data.resumeText)}</div>` : ""}${data?.sourceReference ? `<p class="saved-text muted">资料来源：${e(data.sourceReference)}</p>` : ""}
     <p class="muted">资料由 GPT 保存到此申请后显示。更新或补充资料请在 GPT 中操作。</p></section>`;
   const section = String(query.section ?? (query.status ? "tasks" : "timeline"));
   const paging = { ...(query.cursor ? { cursor: query.cursor } : {}), ...(query.pageSize ? { pageSize: query.pageSize } : {}) };
