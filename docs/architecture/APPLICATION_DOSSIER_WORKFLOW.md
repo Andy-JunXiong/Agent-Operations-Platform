@@ -35,10 +35,44 @@ These contracts describe the code; they do not assert hosted-client or productio
 
 ## Completion indicators
 
-The four indicators are: a usable-format saved URL, JD text, confirmed submitted
+The four indicators are: a usable-format saved URL, explicitly sourced full JD text, confirmed submitted
 resume version, and a nonempty structured comparison. A candidate or confirmed
 file with an unknown revision is explicitly incomplete for version confirmation.
 Saved comparison completeness is not an automated quality certification. The
 comparison can still be reviewed when the submission version is pending, with
 its source/version uncertainty disclosed in the saved report.
+
+## Explicit JD completeness — September 23
+
+### Continuity and benefits
+
+The preparation workflow needs to distinguish retained summaries from complete
+source text. This increment adds explicit source-kind declarations and consistent
+Web/context labels, so a summary cannot satisfy the complete-JD indicator. It
+enables deliberate source correction and later preparation from attributable
+material. Preserved source facts support reproducibility across conversations;
+complete-dossier real use and source quality still require separate acceptance.
+
+The optional `jobDescriptionKind` accepts FULL_TEXT, SUMMARY or UNKNOWN. Omission
+with saved text reads as UNKNOWN; absent text projects MISSING. FULL_TEXT requires
+text and a sourceReference; SUMMARY requires text. No legacy row is rewritten and
+there is no migration. Preserve other profile fields when saving a new snapshot.
+
+The shared view labels full text, requirements summaries and unverified material
+separately. Preparation context adds `dossier.jobDescriptionKind` and the
+`JOB_DESCRIPTION_COMPLETENESS` gap. Existing AVAILABLE/MISSING status continues
+to mean text presence. Saved interview citations use their retained profile facts,
+not today's classification. The host instruction explicitly qualifies summaries.
+
+Only the new derived warning is excluded from the interview input hash, preserving
+unchanged pre-upgrade hashes. Actual profile/source changes still invalidate older
+preparations. Source snapshots, authority, lifecycle, Tasks and submission evidence
+retain their existing contracts.
+
+Verification: 74 tests across the five affected dossier/context/resume/interview/
+Web suites, both TypeScript configurations and build passed in this public checkout.
+The tests cover validation, material status, legacy hashes, explicit source changes
+and historical rendering. This is public source evidence, not a hosted-service,
+live account or cross-host acceptance claim. Unchanged broader runtime checks are
+not repeated locally; existing full Verify CI and public-data gates remain intact.
 

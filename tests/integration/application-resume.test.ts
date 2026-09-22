@@ -35,7 +35,8 @@ it("keeps candidate discovery separate from submission, dossier and lifecycle, s
   const html = applicationView(w.service, w.projectId, {}, "Australia/Sydney");
   expect(html).toContain("候选简历 · 待确认是否投递"); expect(html).not.toContain("已确认实际投递版本");
   expect(html).toContain("申请资料清单");
-  expect(html).toContain("1 / 4 已齐备");
+  expect(html).toContain("0 / 4 已齐备");
+  expect(html).toContain("完整性待确认");
   expect(html).toContain("已有候选，待确认投递版本");
   expect(html).toContain("Saved JD"); expect(html).toContain("&lt;script&gt;bad()"); expect(html).not.toContain("<script>bad()");
   expect(html).toContain("Drive 文件（当前内容）"); expect(html).toContain("revision1");

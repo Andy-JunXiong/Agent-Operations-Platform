@@ -3,6 +3,7 @@ import { fitPanel, discoveryPanel } from "./job-library-views.js";
 import { assessmentListSummary, assessmentPageOptions, candidateAssessmentPanel } from "./candidate-assessment-view.js";
 import type { WorkspaceService } from "../application/workspace-service.js";
 import { applicationProfileSchema } from "../domain/application-profile.js";
+import { jobDescriptionPresentation } from "./application-profile-view.js";
 import { interviewPreparationPanel } from "./interview-preparation-view.js";
 import { applicationResumeSchema, isResumeFileUrl, type ApplicationResume } from "../domain/application-resume.js";
 import type { ReadPage } from "../application/read-pagination.js";
@@ -192,8 +193,9 @@ function resourceRow(resource: ResourceRecord, zone: string): string {
   const profile = applicationProfileSchema.safeParse(resource.observedFacts);
   if (profile.success) {
     const p = profile.data;
+    const jd = jobDescriptionPresentation(p);
     return `<article class="evidence-row"><h3>${e(resource.title ?? "岗位资料版本")}</h3><p class="muted">${e(resource.provider)} · ${e(date(resource.createdAt, zone))}</p><details><summary>查看此版本资料</summary>${[
-      ["职位描述 · JD", p.jobDescription], ["技能匹配报告", p.skillMatchText],
+      [jd.title, p.jobDescription], ["岗位资料完整性", jd.label], ["技能匹配报告", p.skillMatchText],
       ["结构化匹配摘要", p.skillMatch?.summary], ["简历版本", p.resumeVersion],
       ["简历内容", p.resumeText], ["资料来源", p.sourceReference],
     ].filter(([, value]) => value).map(([title, value]) => `<h4>${e(title)}</h4><div class="saved-text">${e(value)}</div>`).join("")}</details></article>`;
@@ -236,8 +238,9 @@ export function applicationView(service: WorkspaceService, id: string, query: Re
   const report = applicationProfileSchema.safeParse(profile.saved?.facts);
   const match = report.success ? report.data.skillMatch : null;
   const data = report.success ? report.data : null;
+  const jd = jobDescriptionPresentation(data);
   const matchLabels = { MATCH: "匹配", PARTIAL: "部分匹配", GAP: "有差距", UNKNOWN: "待确认" };
-  const profilePanels = `<section id="application-jd" class="panel application-profile"><h2>职位描述 · JD</h2>${report.success && report.data.jobDescription
+  const profilePanels = `<section id="application-jd" class="panel application-profile"><h2>${e(jd.title)}</h2><p class="muted">${e(jd.label)}</p>${report.success && report.data.jobDescription
     ? `<div class="saved-text">${e(report.data.jobDescription)}</div>` : `<p>尚未保存 JD 正文。</p>${safeExternalUrl(typeof p.metadata.postingReference === "string" ? p.metadata.postingReference : null) ? `<a class="text-link" target="_blank" rel="noopener noreferrer" href="${e(p.metadata.postingReference)}">查看职位原文 ↗</a>` : ""}`}</section>
     <section id="application-skills" class="panel application-profile"><h2>我的技能匹配</h2><p class="section-intro">Job requirements · 岗位要求与我的技能对照</p>${data?.skillMatchText ? `<div class="saved-text">${e(data.skillMatchText)}</div>` : ""}${match ? `<p class="saved-text">${e(match.summary)}</p><div class="match-table"><table><thead><tr><th>岗位要求</th><th>我的经历 / 技能依据</th><th>匹配情况</th><th>差距 / 待补证据</th></tr></thead><tbody>${match.matches.map(m => `<tr><td>${e(m.requirement)}</td><td>${e(m.evidence)}</td><td>${e(matchLabels[m.assessment])}</td><td>${e(m.gap ?? (m.assessment === "MATCH" ? "—" : "待补充"))}</td></tr>`).join("")}</tbody></table></div>${match.gaps.length ? `<h3>待补足</h3><ul>${match.gaps.map(g => `<li>${e(g)}</li>`).join("")}</ul>` : ""}`
     : data?.skillMatchText ? "" : profile.candidates.length ? profile.candidates.map(c => `<p class="saved-text">${e(c.fitReason)}</p><p class="muted">已关联候选岗位的匹配建议 · ${e(fitUncertaintyLabel(c.fitUncertainty))} · <a href="${candidateLink(c.id)}">查看来源</a></p>`).join("")
@@ -248,7 +251,7 @@ export function applicationView(service: WorkspaceService, id: string, query: Re
   const confirmedFile = resumes.some(r => r.facts.interpretation.status === "CONFIRMED_FILE");
   const materials = [
     { title: "职位链接", ready: !!sourceUrl, status: sourceUrl ? "已保存" : "待补充", href: sourceUrl ?? "#application-jd" },
-    { title: "JD 正文", ready: !!data?.jobDescription, status: data?.jobDescription ? "已保存" : "待补充", href: "#application-jd" },
+    { title: "完整 JD", ready: jd.complete, status: jd.label, href: "#application-jd" },
     { title: "投递简历版本", ready: confirmedVersion, status: confirmedVersion ? "已确认版本" : confirmedFile ? "文件已确认，版本待确认" : resumes.length ? "已有候选，待确认投递版本" : "待关联", href: "#application-resume" },
     { title: "岗位要求与技能对照", ready: !!match?.matches.length, status: match?.matches.length ? "已保存对照表" : "待逐项对照", href: "#application-skills" },
   ];

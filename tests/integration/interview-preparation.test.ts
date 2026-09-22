@@ -8,6 +8,8 @@ import { verifiedRequestContext } from "../../src/application/request-context.js
 import { openDatabase } from "../../src/persistence/database.js";
 import { applicationView } from "../../src/web/views.js";
 import type { InterviewReport } from "../../src/domain/interview-preparation.js";
+import { canonicalHash } from "../../src/domain/canonical-json.js";
+import { applicationProfileSchema } from "../../src/domain/application-profile.js";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
 import { createWorkspaceMcpServer } from "../../src/mcp/create-server.js";
@@ -168,6 +170,41 @@ it("detects dossier and resume edits, includes authored corrections and excludes
   expect(read.context?.missingMaterials).toContain(`SOURCE_UNAVAILABLE:${second.source.id}`);
 });
 
+it("preserves legacy preparation hashes and snapshots while classifying corrected dossier sources", () => {
+  const w = fixture(); w.prep.record(w.request());
+  const saved = w.prep.read({ projectId: w.projectId }).preparation!;
+  // Reproduce the pre-classification snapshot/fingerprint, without changing its
+  // source facts or inventing a completeness declaration for the legacy dossier.
+  const legacyInputs = structuredClone(saved.inputs);
+  legacyInputs.missingMaterials = legacyInputs.missingMaterials.filter(x => x !== "JOB_DESCRIPTION_COMPLETENESS");
+  const legacyHash = canonicalHash({ ...legacyInputs, workingResume: legacyInputs.workingResume
+    ? { ...legacyInputs.workingResume, selectionBasis: undefined } : null });
+  expect(saved.inputHash).toBe(legacyHash);
+  w.database.prepare("UPDATE resources SET evidence_snapshot_json=? WHERE id=?").run(JSON.stringify(legacyInputs), saved.id);
+  const before = changes(w);
+  const legacyRead = w.prep.read({ projectId: w.projectId, includeContext: true });
+  expect(legacyRead.status).toBe("CURRENT");
+  expect(legacyRead.preparation?.inputs).toEqual(legacyInputs);
+  expect(legacyRead.context?.missingMaterials).toContain("JOB_DESCRIPTION_COMPLETENESS");
+  expect(applicationView(w.service, w.projectId, {}, "Australia/Sydney")).toContain("完整性待确认");
+  expect(changes(w)).toEqual(before);
+
+  const facts = applicationProfileSchema.parse(w.service.getProject(w.projectId).applicationProfile!.saved!.facts);
+  w.service.recordObservation({ projectId: w.projectId, provider: "chatgpt", resourceType: "NOTE",
+    externalId: randomUUID(), externalUri: null, title: "Classified source", observedAt: "2026-09-23T00:00:00Z",
+    observedFacts: { ...facts, jobDescriptionKind: "SUMMARY" }, idempotencyKey: randomUUID() });
+  expect(w.prep.read({ projectId: w.projectId }).status).toBe("STALE");
+  w.prep.record(w.request());
+  const currentHtml = applicationView(w.service, w.projectId, {}, "Australia/Sydney");
+  expect(currentHtml).toContain("仅有要求摘要，完整 JD 待补充");
+  expect(currentHtml).toContain("完整 JD 待补充或确认");
+  const historicalHtml = applicationView(w.service, w.projectId, { preparationVersion: 1 }, "Australia/Sydney");
+  const historicalPanel = historicalHtml.split('id="application-interview"')[1]!.split('id="application-resume"')[0]!;
+  expect(historicalPanel).toContain("完整性待确认");
+  expect(historicalPanel).not.toContain("仅有要求摘要");
+  expect(w.prep.read({ projectId: w.projectId, preparationVersion: 1 }).preparation?.inputs).toEqual(legacyInputs);
+});
+
 it("discovers and invokes interview reads, admission errors, saves and exact version read through MCP", async () => {
   const w = fixture(), server = createWorkspaceMcpServer(w.service);
   const client = new Client({ name: "interview-preparation-test", version: "1" });
@@ -176,6 +213,17 @@ it("discovers and invokes interview reads, admission errors, saves and exact ver
     await server.connect(s); await client.connect(c);
     const tools = await client.listTools();
     expect(tools.tools.find(t => t.name === "workspace_get_interview_preparation")?.annotations?.readOnlyHint).toBe(true);
+    const facts = applicationProfileSchema.parse(w.service.getProject(w.projectId).applicationProfile!.saved!.facts);
+    const classified = await client.callTool({ name: "workspace_record_observation", arguments: {
+      projectId: w.projectId, provider: "chatgpt", resourceType: "NOTE", title: "Full saved posting",
+      observedAt: "2026-09-23T00:00:00Z", observedFacts: { ...facts, jobDescriptionKind: "FULL_TEXT" },
+      idempotencyKey: randomUUID(),
+    } });
+    expect(classified.isError).not.toBe(true);
+    const projectRead = await client.callTool({ name: "workspace_get_project", arguments: { projectId: w.projectId } });
+    expect(projectRead.structuredContent).toMatchObject({ result: {
+      preparationContext: { dossier: { jobDescriptionKind: "FULL_TEXT", jobDescriptionStatus: "AVAILABLE" } },
+    } });
     const read = await client.callTool({ name: "workspace_get_interview_preparation", arguments: { projectId: w.projectId, includeContext: true } });
     expect(read.structuredContent).toMatchObject({ result: { status: "NOT_PREPARED", context: { contractVersion: "interview-preparation-context-v1" } } });
     const input = w.request();

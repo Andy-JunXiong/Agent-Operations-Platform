@@ -1,5 +1,10 @@
 # Single-application preparation context
 
+September 23: [explicit JD completeness](APPLICATION_DOSSIER_WORKFLOW.md#explicit-jd-completeness--september-23)
+adds `dossier.jobDescriptionKind` and `JOB_DESCRIPTION_COMPLETENESS` for saved text
+that is not explicitly full. AVAILABLE/MISSING still describes text presence;
+legacy records and submission evidence are unchanged.
+
 Public technical excerpt. Personal operations and deployment ledgers are excluded.
 These contracts describe the code; they do not assert hosted-client or production acceptance.
 

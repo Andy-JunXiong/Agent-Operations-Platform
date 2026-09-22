@@ -199,7 +199,8 @@ it("shows the application date and chronological evidence, and renders a saved J
   expect(html).toContain("Project experience");
   expect(html).toContain("&lt;script&gt;unsafe()&lt;/script&gt;");
   expect(html).not.toContain("<script>unsafe()");
-  expect(html.indexOf('aria-label="申请详情分区"')).toBeLessThan(html.indexOf('职位描述 · JD'));
+  expect(html.indexOf('aria-label="申请详情分区"')).toBeLessThan(html.indexOf('id="application-jd"'));
+  expect(html).toContain("完整性待确认");
   expect(w.database.prepare("SELECT total_changes() n").get()).toEqual(changes);
   const list = await (await w.request("/workspace/job-search/applications", { headers })).text();
   expect(list).toContain("申请日期：2026-07-01");

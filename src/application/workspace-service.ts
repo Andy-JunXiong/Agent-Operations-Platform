@@ -6,7 +6,7 @@ import { CandidateJobDescriptionService } from "./candidate-job-description-serv
 import { applicationMailCategorySchema, isApplicationMailCategory, isVacancyMarketing } from "../domain/application-mail-event.js";
 import { randomUUID } from "node:crypto";
 import { gmailCheckSchema } from "../domain/gmail-check.js";
-import { applicationProfileSchema } from "../domain/application-profile.js";
+import { applicationProfileSchema, jobDescriptionKind } from "../domain/application-profile.js";
 import { applicationResumeSchema, isResumeFileUrl } from "../domain/application-resume.js";
 import type { ResumeDocument } from "../domain/resume-document.js";
 import type { WorkspaceDatabase } from "../persistence/database.js";
@@ -159,6 +159,7 @@ export interface ApplicationPreparationContext {
     profileProvider: string | null;
     profileSavedAt: string | null;
     jobDescriptionStatus: "AVAILABLE" | "MISSING";
+    jobDescriptionKind: ReturnType<typeof jobDescriptionKind>;
     skillMatchStatus: "AVAILABLE" | "MISSING";
   };
   workingResume: {
@@ -197,6 +198,7 @@ export interface ApplicationPreparationContext {
   missingItems: Array<
     | "POSTING_REFERENCE"
     | "JOB_DESCRIPTION"
+    | "JOB_DESCRIPTION_COMPLETENESS"
     | "SKILL_MATCH"
     | "SUBMITTED_RESUME_FILE"
     | "SUBMITTED_RESUME_VERSION"
@@ -1520,6 +1522,7 @@ export class WorkspaceService {
     const missingItems: ApplicationPreparationContext["missingItems"] = [];
     if (!isUsablePostingReference(project.metadata.postingReference)) missingItems.push("POSTING_REFERENCE");
     if (!profileData?.jobDescription) missingItems.push("JOB_DESCRIPTION");
+    else if (jobDescriptionKind(profileData) !== "FULL_TEXT") missingItems.push("JOB_DESCRIPTION_COMPLETENESS");
     if (!profileData?.skillMatch?.matches.length) missingItems.push("SKILL_MATCH");
     if (!confirmedResumes.length) missingItems.push("SUBMITTED_RESUME_FILE");
     if (!confirmedResumes.some((resume) => resume.confirmationStatus === "CONFIRMED_VERSION")) {
@@ -1536,6 +1539,7 @@ export class WorkspaceService {
         profileProvider: profile.saved?.provider ?? null,
         profileSavedAt: profile.saved?.savedAt ?? null,
         jobDescriptionStatus: profileData?.jobDescription ? "AVAILABLE" : "MISSING",
+        jobDescriptionKind: jobDescriptionKind(profileData),
         skillMatchStatus: profileData?.skillMatch?.matches.length ? "AVAILABLE" : "MISSING",
       },
       workingResume: {

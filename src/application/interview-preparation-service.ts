@@ -68,8 +68,12 @@ export class InterviewPreparationService {
         ...(skills.source && skills.status !== "CURRENT" ? [`SKILL_LIBRARY_${skills.status}`] : []),
         ...unavailable.map(id => `SOURCE_UNAVAILABLE:${id}`)],
     };
-    // Selection basis describes a read, not a source version.
-    const fingerprint = { ...snapshot, workingResume: snapshot.workingResume
+    // Selection basis and the new derived completeness warning are not source
+    // versions. Excluding the warning preserves hashes for unchanged legacy inputs;
+    // an explicit kind/source correction still changes the retained dossier facts.
+    const fingerprint = { ...snapshot,
+      missingMaterials: snapshot.missingMaterials.filter(item => item !== "JOB_DESCRIPTION_COMPLETENESS"),
+      workingResume: snapshot.workingResume
       ? { ...snapshot.workingResume, selectionBasis: undefined } : null };
     if (selectedIds.length > 100 || canonicalJson(snapshot).length > MAX_SNAPSHOT_CHARACTERS) {
       throw new ValidationError("Interview context exceeds 100 sources or 600000 characters");

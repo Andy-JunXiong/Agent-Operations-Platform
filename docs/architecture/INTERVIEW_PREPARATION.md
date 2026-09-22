@@ -4,6 +4,12 @@ Status: implemented public source milestone, September 22, 2026. This contract
 describes the platform code and synthetic evidence. Account-specific preparation
 reports, private deployment records and real interview outcomes are not published.
 
+September 23: [explicit JD completeness](APPLICATION_DOSSIER_WORKFLOW.md#explicit-jd-completeness--september-23)
+adds accurate summary/unknown citation labels and a qualified host instruction.
+Historical labels use the retained source snapshot; the derived completeness
+warning alone does not invalidate unchanged legacy source hashes. Explicit source
+corrections still do. The affected public tests, type checks and build passed.
+
 ## Continuity and benefits
 
 ### Upstream requirement

@@ -6,6 +6,31 @@ and PAW identify earlier project stages and retained compatibility identifiers. 
 
 This public overview preserves engineering milestones without a personal operational diary.
 
+## September 23 source completeness
+
+### Continuity and benefits
+
+The dossier and interview workflows need to distinguish a requirements summary
+from a complete source document. The [completeness increment](architecture/APPLICATION_DOSSIER_WORKFLOW.md#explicit-jd-completeness--september-23)
+adds explicit source declarations, material/context warnings and historical
+citation labels. A summary no longer satisfies the full-JD indicator, while
+unchanged legacy reports retain their source hashes. This enables deliberate
+source correction without rewriting earlier evidence and supports reproducible
+preparation across later conversations. Real material quality, user corrections
+and additional-host acceptance remain separate outcomes.
+
+The public promotion contains generic source and synthetic tests, with public
+branding and its independent history retained. No personal operations, account
+identifiers, saved preparations or deployment artifacts are publication inputs.
+The optional reference Worker is unchanged; Pages retains its existing Verify gate.
+
+Verification passed 74 tests across five directly affected integration suites,
+both TypeScript configurations and build. Full local regression was not repeated:
+the affected contracts have passing evidence, with normal full Verify CI retained.
+Three public-guard tests and the pinned Gitleaks/public-file scan passed over
+356 publishable files. Diff/reference review covers publication. This source
+milestone does not claim a live public application or real user-correction result.
+
 ## September 22 interview preparation
 
 ### Continuity and benefits

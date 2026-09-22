@@ -163,6 +163,12 @@ for ongoing maintenance. Actual LinkedIn preview acceptance remains separate.
 
 ## Verification
 
+The [September 23 source-completeness increment](docs/HISTORY.md#september-23-source-completeness)
+distinguishes full JD text, summaries and unknown completeness, preserving the
+source basis of historical preparations. Its public promotion passed 74 affected
+tests, both type checks and build. Real source quality and hosted-client acceptance
+remain separate from this synthetic evidence.
+
 The [mail discovery follow-up](docs/HISTORY.md#september-17-mail-discovery-follow-up)
 adds the literal phrase `interest in joining` to subject discovery. Its synthetic
 regression keeps full-body review separate from acknowledgement and business

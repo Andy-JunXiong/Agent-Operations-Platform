@@ -79,6 +79,7 @@ it("returns one bounded read-only preparation projection with attributable dossi
       contractVersion: "job-application-profile-v0.1",
       sourceReference: "https://example.test/jobs/123 and working resume version 1",
       jobDescription: "Build reliable data and AI systems.",
+      jobDescriptionKind: "FULL_TEXT",
       skillMatch: {
         summary: "Grounded comparison",
         matches: [{
@@ -128,6 +129,7 @@ it("returns one bounded read-only preparation projection with attributable dossi
       profileProvider: "chatgpt",
       profileSavedAt: "2026-09-11T02:00:00Z",
       jobDescriptionStatus: "AVAILABLE",
+      jobDescriptionKind: "FULL_TEXT",
       skillMatchStatus: "AVAILABLE",
     },
     workingResume: {
@@ -204,6 +206,7 @@ it("reports explicit material gaps without fabricating a resume or complete hist
     dossier: {
       profileResourceId: null,
       jobDescriptionStatus: "MISSING",
+      jobDescriptionKind: "MISSING",
       skillMatchStatus: "MISSING",
     },
     workingResume: { status: "MISSING", options: [], selected: null },

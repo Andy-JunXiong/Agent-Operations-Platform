@@ -8,6 +8,7 @@ export const applicationProfileSchema = z.object({
   skillMatchText: z.string().trim().max(50000).optional(),
   sourceReference: z.string().trim().max(2000).optional(),
   jobDescription: z.string().trim().min(1).max(50000).nullable(),
+  jobDescriptionKind: z.enum(["FULL_TEXT", "SUMMARY", "UNKNOWN"]).optional(),
   skillMatch: z.object({
     summary: z.string().trim().min(1).max(5000),
     matches: z.array(z.object({
@@ -18,4 +19,15 @@ export const applicationProfileSchema = z.object({
     }).strict()).max(100),
     gaps: z.array(z.string().trim().min(1).max(1000)).max(100),
   }).strict().nullable(),
-}).strict();
+}).strict().superRefine((profile, context) => {
+  if (!profile.jobDescription && profile.jobDescriptionKind && profile.jobDescriptionKind !== "UNKNOWN") {
+    context.addIssue({ code: "custom", path: ["jobDescriptionKind"], message: "A classified job description requires saved text" });
+  }
+  if (profile.jobDescriptionKind === "FULL_TEXT" && !profile.sourceReference) {
+    context.addIssue({ code: "custom", path: ["sourceReference"], message: "Full job description text requires an attributable source reference" });
+  }
+});
+
+export function jobDescriptionKind(profile: z.infer<typeof applicationProfileSchema> | null | undefined) {
+  return !profile?.jobDescription ? "MISSING" as const : profile.jobDescriptionKind ?? "UNKNOWN";
+}
